@@ -2,13 +2,11 @@
     width: 100%;
     margin: 0;
     padding: 0;
-}
-.HomePage{
     background-color: #F8EBE2;
-    
-}
-.HomePageContainer{
 
+}
+
+.HomePageContainer{
     max-width: 75em;
     height: 100vh;
     margin: auto;
@@ -17,7 +15,7 @@
 }
 #section1{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -94,25 +92,80 @@ nav ul li:hover{
     display: flex;
 }
 .leftintrosection{
-  background-color: lightblue;
-  width: 100%;
-  height: 100%;
-  display: flex;
+  flex: 40%;
+  height: 80%;
+  padding: 2em 2em 2em 2em;
   
-  
+}
+.left-one{
+    height: 4em;
+    font-size: 1.2em;
+    color: #DC5341;
+    text-align: left;
+}
+
+.left-two{
+    font-size: 1.2em;
+    color: #DC5341;
+    padding-left: 10rem;
+}
+
+.left-three{    
+    font-size: 1em;
+    color: black;
+    height: 10em;
+    padding-top: 2em;
+    line-height: 2em;
+        text-align: left;
+}
+
+.left-four{    
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+
+.left-four button{
+    width: 30%;
+    background-color: transparent;
+    height: 2rem;
+    border: 2px solid #DC5341;
+    color: #DC5341;
+}
+
+.left-four button:hover{
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 .rightintrosection{
+    margin-right: 1.5em;
+    flex: 50%;
+    background-color: white;
+    height: 80%;
+    padding: 0.3em;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+}
+.rightimgcontainer{
     width: 100%;
+    background-color: black;
+    background-image: url(../img/home-page.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
-    background-color: lightgreen;
-  
+    background-blend-mode:lighten;
 }
 
 #section2{
     background-color: lightcoral;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
