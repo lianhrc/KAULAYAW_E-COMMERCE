@@ -8,6 +8,7 @@ import Products from "./pages/products f/Products";
 import Overview from "./pages/overview f/Overview";
 import Cart from "./pages/cart f/Cart";
 import "../src/pages/home f/Home.css"
+import "../src/pages/products f/Products.css"
 import "./App.css"
 
 function App() {

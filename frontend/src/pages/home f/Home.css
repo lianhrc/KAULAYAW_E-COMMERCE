@@ -1,4 +1,129 @@
-* {
+*{
+    width: 100%;
     margin: 0;
     padding: 0;
+}
+.HomePage{
+    background-color: #F8EBE2;
+    
+}
+.HomePageContainer{
+
+    max-width: 75em;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+    justify-content: center;
+}
+#section1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.headersection{
+    height: 10em;
+    width: 100%;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.leftheader{
+    flex: 1fr;
+    width: auto; /* Set the width of the container */
+    height: auto; /* Set the height of the container */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    
+}
+
+.logo-icon {
+    max-width: 200px; /* Ensure the logo doesn't exceed the width of its container */
+    max-height: 200px; /* Ensure the logo doesn't exceed the height of its container */
+    cursor: pointer;
+} 
+.centerheader{
+    flex: 40%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li:hover{
+    cursor: pointer;
+    color: #DC5341;
+}
+.rightheader{
+    flex: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+.rightheader button{
+    border: none;
+    background: transparent;
+    width: 20%;
+    
+}
+.rightheader button img{
+    max-width: 30px; /* Ensure the logo doesn't exceed the width of its container */
+    max-height: 30px; 
+    cursor: pointer;
+}
+.rightheader button img:hover{
+   opacity: 0.6;
+}
+
+.introsection{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.leftintrosection{
+  background-color: lightblue;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  
+  
+}
+
+.rightintrosection{
+    width: 100%;
+    height: 100%;
+    background-color: lightgreen;
+  
+}
+
+#section2{
+    background-color: lightcoral;
+    width: 100%;
+    height: 100%;
+}
+
+
+#section3{
+    background-color: lightblue;
+    width: 100%;
+    height: 100%;
+}
+
+#section4{
+    background-color: lightcoral;
+    width: 100%;
+    height: 100%;
 }
