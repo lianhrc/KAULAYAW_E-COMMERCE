@@ -2,6 +2,9 @@ import React from 'react';
 import iconlogo from '../img/icon-logo.png';
 import carticon from '../img/shopping-bag.png';
 import usericon from '../img/user.png';
+import prod1 from '../img/prod1.png';
+import prod2 from '../img/prod2.png';
+import prod3 from '../img/prod3.png';
 
 const Home = () =>{
   return (
@@ -15,10 +18,10 @@ const Home = () =>{
               <div className="centerheader">
                 <nav>
                     <ul>
-                      <li>HOME</li>
-                      <li>PRODUCTS</li>
-                      <li>ABOUT</li>
-                      <li>CONTACT</li>
+                      <li><a href='#section1'>HOME</a></li>
+                      <li><a href='#section2'>PRODUCTS</a></li>
+                      <li><a href='#section3'>ABOUT</a></li>
+                      <li><a href='#section4'>CONTACT</a></li>
                     </ul>
                 </nav>
               </div>
@@ -52,10 +55,100 @@ const Home = () =>{
             </div>
           </div>
           <div id='section2'>
-
+              <div className="headersection2">
+                  <h1>OUR SPECIAL OFFERS</h1>
+              </div>
+              <div className="section2content">
+                    <div className="box" id='box1'>
+                      <div className="imgcontainer1">
+                          <h3>Palangga</h3>
+                      </div>
+                      <button className='cta'><span class="hover-underline-animation"> view more </span>
+                          <svg
+                            id="arrow-horizontal"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="10"
+                            viewBox="0 0 46 16"
+                          >
+                            <path
+                              id="Path_10"
+                              data-name="Path 10"
+                              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                              transform="translate(30)"
+                            ></path>
+                          </svg>
+                      </button>
+                  </div>
+                  <div className="box" id='box2'>
+                      <div className="imgcontainer2">
+                          <h3>Tala</h3>
+                      </div>
+                      <button className='cta'><span class="hover-underline-animation"> view more </span>
+                          <svg
+                            id="arrow-horizontal"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="10"
+                            viewBox="0 0 46 16"
+                          >
+                            <path
+                              id="Path_10"
+                              data-name="Path 10"
+                              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                              transform="translate(30)"
+                            ></path>
+                          </svg>
+                      </button>
+                  </div>
+                  <div className="box" id='box3'>
+                      <div className="imgcontainer3">
+                         <h3>Dapit-Hapon</h3>
+                      </div>
+                      <button className='cta'><span class="hover-underline-animation"> view more </span>
+                          <svg
+                            id="arrow-horizontal"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="10"
+                            viewBox="0 0 46 16"
+                          >
+                            <path
+                              id="Path_10"
+                              data-name="Path 10"
+                              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                              transform="translate(30)"
+                            ></path>
+                          </svg>
+                      </button>
+                  </div>
+              </div>
           </div>
-          <div id='section3'></div>
-          <div id='section4'></div>
+          <div id='section3'>
+            <div className="section3leftcontainer">
+              <div className="aboutuscontainerimg">
+              </div>
+            </div>
+            <div className="section3rightcontainer">
+              <h1>KAULAYAW?</h1>
+                <p className='p1'><span>‘kaulayaw‘</span> means a pleasant and intimate companion.</p>
+              <h1>ABOUT?</h1>
+                <p className='p2'>"Experience the rich tapestry of flavors rooted in the heart of the Philippines at Kaulayaw Coffee! Our beans are not just a culinary delight; they're a celebration of local goodness. Sourced from the fertile soils of the Philippines, our beans bring you the authentic taste of homegrown freshness. Join us on a journey through the diverse landscapes of Philippine agriculture and savor the distinct flavors that make our beans truly exceptional. Welcome to Kaulayaw Coffee, where every bite is a tribute to the vibrant and bountiful fields of our beloved Philippines!"</p>
+              
+            </div>
+          </div>
+          <div id='section4'>
+              <div className="leftsection4">
+                <a href="#section1"><img className='logo-icon' src={iconlogo} alt="Your Description" /></a>
+              </div>
+              <div className="rightsection4">
+                  <button className='foot1'><div className="imgfoot1"></div></button>
+                  <button className='foot2'><div className="imgfoot2"></div></button>
+                  <button className='foot3'><div className="imgfoot3"></div></button>
+                  <button className='foot4'><div className="imgfoot4"></div></button>
+          
+              </div>
+          </div>
       </div>
     </div>
     
