@@ -80,11 +80,11 @@ const Home = () =>{
                             },
                           }}
                         >
-                          <animated.div style={animation}>
                               <div className="modalimgcontainer">
                               <button className='closemodal' onClick={closeModal}>X</button>
                                  <img className='logo-icon-modal' src={iconlogo} alt="Your Description" />
                               </div>
+                          <animated.div style={animation}>
                               
                               <div className="inputfieldcontainer">
                                   <div className="usernamecontainer">
