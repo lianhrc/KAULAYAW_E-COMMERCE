@@ -5,8 +5,42 @@ import usericon from '../img/user.png';
 import prod1 from '../img/prod1.png';
 import prod2 from '../img/prod2.png';
 import prod3 from '../img/prod3.png';
+import Modal from 'react-modal';
+import { useState } from 'react';
+import { useSpring, animated } from 'react-spring';
+
+
 
 const Home = () =>{
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  // Use react-spring for animation
+  const animation = useSpring({
+    opacity: modalIsOpen ? 1 : 0,
+    transform: modalIsOpen ? 'scale(1)' : 'scale(0.8)',
+  });
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const handleLogin = () => {
+    // Implement your login logic here
+    console.log('Logging in...');
+    closeModal();
+  };
+
+  const handleRegister = () => {
+    // Implement your register logic here
+    console.log('Registering...');
+    closeModal();
+  };
+
   return (
     <div className='HomePage'>
       <div className="HomePageContainer">
@@ -27,7 +61,48 @@ const Home = () =>{
               </div>
               <div className="rightheader">
                 <button><img className='logo-icon' src={carticon} alt="Your Description" /></button>
-                <button><img className='logo-icon' src={usericon} alt="Your Description" /></button>
+                <button onClick={openModal}><img className='logo-icon' src={usericon} alt="Your Description" /></button>
+                        <Modal
+                          isOpen={modalIsOpen}
+                          onRequestClose={closeModal}
+                          contentLabel="Login Modal"
+                          style={{
+                            overlay: {
+                              background: 'rgba(0, 0, 0, 0.5)',
+                            },
+                            content: {
+                              border: 'none',
+                              borderRadius: '2em ',
+                              padding: '0',
+                              maxWidth: '500px',
+                              margin: 'auto',
+                              background: '#F8EBE2',
+                            },
+                          }}
+                        >
+                          <animated.div style={animation}>
+                              <div className="modalimgcontainer">
+                              <button className='closemodal' onClick={closeModal}>X</button>
+                                 <img className='logo-icon-modal' src={iconlogo} alt="Your Description" />
+                              </div>
+                              
+                              <div className="inputfieldcontainer">
+                                  <div className="usernamecontainer">
+                                      <div className="iconinput"></div>
+                                      <input type="text"  placeholder='username'/>
+                                  </div>
+                                  <div className="passwordcontainer">
+                                    <div className="iconinput2"></div>
+                                    <input type="password" placeholder='password'/>
+                                  </div>
+                                </div>
+                              <div className="buttonmodal">
+                                  <button className='signupbtn' onClick={handleRegister}>Sign up</button>
+                                  <button className='loginbtn'onClick={handleLogin}>Log in</button>
+                              </div>
+                          </animated.div>
+                        </Modal>
+                  
               </div>
             </div>
             <div className="introsection">

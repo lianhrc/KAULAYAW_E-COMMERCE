@@ -460,3 +460,124 @@ nav a:hover{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*POPUPS*/
+
+
+.closemodal{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    color: black;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-size: 1em;
+}
+
+.modalimgcontainer{
+    width: auto;
+    height: 15em;
+    background-image: url(../img/modalbg.png);  
+    position: relative;
+}
+
+.logo-icon-modal{
+    position: absolute;
+    display: flex;
+    width: auto;
+    height: 80%;
+    margin: 1.5rem 0 2rem 9rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust overlay color and opacity */
+
+}
+
+.inputfieldcontainer{
+    height: 10em;
+    display: flex;
+    padding-top: 3em;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+    row-gap: 2rem;
+}
+
+.usernamecontainer,
+.passwordcontainer{
+    display: flex;
+    flex-direction: row;
+    background-color: #DC5341;
+}
+.usernamecontainer  input,
+.passwordcontainer input{
+        border: 1px solid #DC5341;
+        height: 2em;
+        padding-left: 1rem;
+    }
+
+
+.iconinput{
+    width: 2rem;
+
+    height: 2rem;
+    background-image: url(../img/userlogin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.iconinput2{
+    width: 2rem;
+    height: 2rem;
+    background-image: url(../img/passlogin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.buttonmodal{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: 2em;
+    margin: auto;
+    column-gap: 1rem;
+    justify-content: s;
+    
+}
+
+.signupbtn{
+  border: none;
+  color: gray;
+  cursor: pointer;
+}
+
+.loginbtn{
+    border: none;
+    color: #F8EBE2;
+    cursor: pointer;
+    background-color: #DC5341;
+}
