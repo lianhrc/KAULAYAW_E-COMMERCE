@@ -9,8 +9,7 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import CartSidebar from '../popups/CartSidebar'; // Update the path based on your project structure
-
-
+import { Link } from 'react-router-dom';
 
 
 const Home = () =>{
@@ -70,7 +69,7 @@ const Home = () =>{
                 <nav>
                     <ul>
                       <li><a href='#section1'>HOME</a></li>
-                      <li><a href='#section2'>PRODUCTS</a></li>
+                      <li><Link to="/products">PRODUCTS</Link></li>
                       <li><a href='#section3'>ABOUT</a></li>
                       <li><a href='#section4'>CONTACT</a></li>
                     </ul>
@@ -156,7 +155,7 @@ const Home = () =>{
                       <div className="imgcontainer1">
                           <h3>Kaulayaw Blend</h3>
                       </div>
-                      <button className='cta'><span class="hover-underline-animation"> view more </span>
+                      <button onClick={openModal} className='cta'><span class="hover-underline-animation"> view more </span>
                           <svg
                             id="arrow-horizontal"
                             xmlns="http://www.w3.org/2000/svg"

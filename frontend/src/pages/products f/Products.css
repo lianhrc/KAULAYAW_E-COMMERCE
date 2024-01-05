@@ -19,21 +19,23 @@
     align-items: start;
     padding-left: 2em;
     background-blend-mode: multiply;
+    background-color: transparent;
     justify-content: center;
 }   
-.ProductPageHeader button{
-    max-width: 10%;
+
+.link-style{
     background-color: transparent;
-    height: 3rem;
-    border: none;
-    margin-left: 1rem;
-    color: #ECE4D9;
-    cursor: pointer;
+    width: 10%;
+    margin-left: 3rem;
+    color: white;
+    text-decoration: none;
 }
+
 
 .ProductPageHeader p{
     background-color: transparent;
 }
+
 
 .box{
     -webkit-box-shadow: 5px 5px 15px 5px #000000; 
@@ -65,4 +67,37 @@
     background-blend-mode: multiply;
 }   
 
+    .link-style button {
+    display: flex;
+    height: 3em;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    }
 
+    .link-style button span{
+        background-color: transparent;
+        width: 400px;
+    }
+
+    .link-style button > svg {
+    font-size: 20px;
+    background-color: transparent;
+    transition: all 0.4s ease-in;
+    }
+
+    .link-style button:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+    }
+
+    .link-style button:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+    }
