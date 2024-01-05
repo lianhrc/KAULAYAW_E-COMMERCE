@@ -1,64 +1,87 @@
-import React, { useState } from 'react';
-import Modal from 'react-modal';
-import { useSpring, animated } from 'react-spring';
+import React from 'react'
+import iconlogoprod from '../img/icon-logo.png';
+
 
 const Products = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  // Use react-spring for animation
-  const animation = useSpring({
-    opacity: modalIsOpen ? 1 : 0,
-    transform: modalIsOpen ? 'scale(1)' : 'scale(0.8)',
-  });
-
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
-
-  const handleLogin = () => {
-    // Implement your login logic here
-    console.log('Logging in...');
-    closeModal();
-  };
-
-  const handleRegister = () => {
-    // Implement your register logic here
-    console.log('Registering...');
-    closeModal();
-  };
-
   return (
-    <div>
-      <button onClick={openModal}>Open Modal</button>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Login Modal"
-        style={{
-          overlay: {
-            background: 'rgba(0, 0, 0, 0.5)',
-          },
-          content: {
-            border: 'none',
-            borderRadius: '10px',
-            maxWidth: '300px',
-            margin: 'auto',
-          },
-        }}
-      >
-        <animated.div style={animation}>
-          <h2>Login or Register</h2>
-          <button onClick={handleLogin}>Login</button>
-          <button onClick={handleRegister}>Register</button>
-          <button onClick={closeModal}>Close Modal</button>
-        </animated.div>
-      </Modal>
-    </div>
-  );
-};
+    <div className='Productspage'>
+      <div className="ProductsPageContainer">
+        <div className="ProductPageHeader">
+          <img className='prodheaderlogo' src={iconlogoprod} alt="Your Description" />
+          <button><p>HOME</p></button>
+        </div>
+          <div className="ProductPageContent">
+            <div className="box" id='box1'>
+              <div className="imgcontainer1">
+                  <h3>Kaulayaw Blend</h3>
+              </div>
+              <button className='cta'><span class="hover-underline-animation"> view more </span>
+                  <svg
+                    id="arrow-horizontal"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="10"
+                    viewBox="0 0 46 16"
+                  >
+                    <path
+                      id="Path_10"
+                      data-name="Path 10"
+                      d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                      transform="translate(30)"
+                    ></path>
+                  </svg>
+              </button>
+            </div>
 
-export default Products;
+          <div className="box" id='box2'>
+                      <div className="imgcontainer2">
+                          <h3>Irog Blend</h3>
+                      </div>
+                      <button className='cta'><span class="hover-underline-animation"> view more </span>
+                          <svg
+                            id="arrow-horizontal"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="10"
+                            viewBox="0 0 46 16"
+                          >
+                            <path
+                              id="Path_10"
+                              data-name="Path 10"
+                              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                              transform="translate(30)"
+                            ></path>
+                          </svg>
+                      </button>
+            </div>
+
+          <div className="box" id='box3'>
+              <div className="imgcontainer3">
+                  <h3>Liyag Blend</h3>
+              </div>
+              <button className='cta'><span class="hover-underline-animation"> view more </span>
+                  <svg
+                    id="arrow-horizontal"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="10"
+                    viewBox="0 0 46 16"
+                  >
+                    <path
+                      id="Path_10"
+                      data-name="Path 10"
+                      d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                      transform="translate(30)"
+                    ></path>
+                  </svg>
+              </button>
+          </div>
+
+        </div>
+      </div>
+       
+    </div>
+  )
+}
+
+export default Products

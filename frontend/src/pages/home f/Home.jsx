@@ -8,10 +8,14 @@ import prod3 from '../img/prod3.png';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
+import CartSidebar from '../popups/CartSidebar'; // Update the path based on your project structure
+
 
 
 
 const Home = () =>{
+
+
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -41,6 +45,19 @@ const Home = () =>{
     closeModal();
   };
 
+
+
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const handleOpenCart = () => {
+    setIsCartOpen(true);
+  };
+
+  const handleCloseCart = () => {
+    setIsCartOpen(false);
+  };
+  
   return (
     <div className='HomePage'>
       <div className="HomePageContainer">
@@ -60,49 +77,50 @@ const Home = () =>{
                 </nav>
               </div>
               <div className="rightheader">
-                <button><img className='logo-icon' src={carticon} alt="Your Description" /></button>
-                <button onClick={openModal}><img className='logo-icon' src={usericon} alt="Your Description" /></button>
-                        <Modal
-                          isOpen={modalIsOpen}
-                          onRequestClose={closeModal}
-                          contentLabel="Login Modal"
-                          style={{
-                            overlay: {
-                              background: 'rgba(0, 0, 0, 0.5)',
-                            },
-                            content: {
-                              border: 'none',
-                              borderRadius: '2em ',
-                              padding: '0',
-                              maxWidth: '500px',
-                              margin: 'auto',
-                              background: '#F8EBE2',
-                            },
-                          }}
-                        >
-                              <div className="modalimgcontainer">
-                              <button className='closemodal' onClick={closeModal}>X</button>
-                                 <img className='logo-icon-modal' src={iconlogo} alt="Your Description" />
-                              </div>
-                          <animated.div style={animation}>
-                              
-                              <div className="inputfieldcontainer">
-                                  <div className="usernamecontainer">
-                                      <div className="iconinput"></div>
-                                      <input type="text"  placeholder='username'/>
-                                  </div>
-                                  <div className="passwordcontainer">
-                                    <div className="iconinput2"></div>
-                                    <input type="password" placeholder='password'/>
-                                  </div>
-                                </div>
-                              <div className="buttonmodal">
-                                  <button className='signupbtn' onClick={handleRegister}>Sign up</button>
-                                  <button className='loginbtn'onClick={handleLogin}>Log in</button>
-                              </div>
-                          </animated.div>
-                        </Modal>
-                  
+                  <button className='logo-icon' id="cart-button" onClick={handleOpenCart}><img className='cart-button' src={carticon} alt="Your Description" /></button> 
+
+                   <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} />
+                  <button onClick={openModal}><img className='logo-icon' src={usericon} alt="Your Description" /></button>
+                  <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    contentLabel="Login Modal"
+                    style={{
+                      overlay: {
+                        background: 'rgba(0, 0, 0, 0.5)',
+                      },
+                      content: {
+                        border: 'none',
+                        borderRadius: '2em ',
+                        padding: '0',
+                        maxWidth: '500px',
+                        margin: 'auto',
+                        background: '#F8EBE2',
+                      },
+                    }}
+                  >
+                        <div className="modalimgcontainer">
+                            <img className='logo-icon-modal' src={iconlogo} alt="Your Description" />
+                        </div>
+                    <animated.div style={animation}>
+                        
+                        <div className="inputfieldcontainer">
+                            <div className="usernamecontainer">
+                                <div className="iconinput"></div>
+                                <input type="text"  placeholder='username'/>
+                            </div>
+                            <div className="passwordcontainer">
+                              <div className="iconinput2"></div>
+                              <input type="password" placeholder='password'/>
+                            </div>
+                          </div>
+                        <div className="buttonmodal">
+                            <button className='signupbtn' onClick={handleRegister}>Sign up</button>
+                            <button className='loginbtn'onClick={handleLogin}>Log in</button>
+                        </div>
+                    </animated.div>
+                  </Modal>
+                    
               </div>
             </div>
             <div className="introsection">
@@ -136,7 +154,7 @@ const Home = () =>{
               <div className="section2content">
                     <div className="box" id='box1'>
                       <div className="imgcontainer1">
-                          <h3>Palangga</h3>
+                          <h3>Kaulayaw Blend</h3>
                       </div>
                       <button className='cta'><span class="hover-underline-animation"> view more </span>
                           <svg
@@ -157,7 +175,7 @@ const Home = () =>{
                   </div>
                   <div className="box" id='box2'>
                       <div className="imgcontainer2">
-                          <h3>Tala</h3>
+                          <h3>Irog Blend</h3>
                       </div>
                       <button className='cta'><span class="hover-underline-animation"> view more </span>
                           <svg
@@ -178,7 +196,7 @@ const Home = () =>{
                   </div>
                   <div className="box" id='box3'>
                       <div className="imgcontainer3">
-                         <h3>Dapit-Hapon</h3>
+                         <h3>Liyag Blend</h3>
                       </div>
                       <button className='cta'><span class="hover-underline-animation"> view more </span>
                           <svg
@@ -221,7 +239,6 @@ const Home = () =>{
                   <button className='foot2'><div className="imgfoot2"></div></button>
                   <button className='foot3'><div className="imgfoot3"></div></button>
                   <button className='foot4'><div className="imgfoot4"></div></button>
-          
               </div>
           </div>
       </div>

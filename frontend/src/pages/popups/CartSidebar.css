@@ -1,0 +1,17 @@
+/* CartSidebar.css */
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 500px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar-content {
+    padding: 20px;
+  }
+  
+  /* Other styles */
+  
