@@ -2,52 +2,10 @@
     max-width: 100%;
     height: 100vh;
     margin: auto;
-    position: relative;
     justify-content: center;
 }
 
 
-.ProductPageHeader{
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    flex-direction: column;
-    background-blend-mode: overlay;
-    background-color: #794A3A;
-    background-size: cover;
-    align-items: start;
-    background-blend-mode: multiply;
-    background-color: transparent;
-    justify-content: center;
-}   
-
-.link-style{
-    background-color: transparent;
-    width: 10%;
-    margin-left: 3rem;
-    color: white;
-    text-decoration: none;
-}
-
-
-.ProductPageHeader p{
-    background-color: transparent;
-}
-
-
-.box{
-    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-    box-shadow: 5px 5px 5px 1px #000000;
-}
-
-.prodheaderlogo{
-    position: absolute;
-    display: flex;
-    height: 5%;
-    width: 3%;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5); /* Adjust overlay color and opacity */
-}
 
 .ProductPageContent{
     max-width: 100%;
@@ -60,39 +18,84 @@
     align-content: space-evenly;
     column-gap: 2em;
     row-gap: 2em;
+    position: relative;
+    background-size: contain;
+    overflow-y: auto;
     background-image: url(../img/prodbg.png);
 }   
 
-    .link-style button {
-    display: flex;
-    height: 3em;
-    width: 150px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 3px;
-    letter-spacing: 1px;
-    transition: all 0.2s linear;
-    cursor: pointer;
-    border: none;
-    }
-
-    .link-style button span{
+    
+    .beans{
+        display: flex;
+        position: absolute;
+        margin-top: 5rem;
+        padding-bottom: 5rem;
+        column-gap: 30px;
+        row-gap: 50px;
         background-color: transparent;
-        width: 400px;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90%;
+
+    }
+    .bean{
+        height: 400px;
+        padding: 5px;
+        width: 300px;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+        background-color: white;
+        position: relative;
+
+    }
+    
+     .beans img{
+        object-fit: cover;
+        width: 100%;
+        height:100%;
+        border: none;
+    }
+    .beans h4{
+        font-size: 12px;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #FACA78;
+        height:2rem;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
-    .link-style button > svg {
-    font-size: 20px;
-    background-color: transparent;
-    transition: all 0.4s ease-in;
+    .beans span{
+        font-size: 12px;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #FACA78;
+        height:2rem;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 
-    .link-style button:hover > svg {
-    font-size: 1.2em;
-    transform: translateX(-5px);
-    }
-
-    .link-style button:hover {
-    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
-    transform: translateY(-2px);
-    }
+.addCart{
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #FACA78;
+    height:2rem;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;        
+    position: absolute;
+    justify-self: unset;
+    border: none;
+    bottom: 0;
+    left: 0;
+}

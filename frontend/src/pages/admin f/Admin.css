@@ -70,19 +70,7 @@
     color: black;
 }
 
-#adminheadersection{
-    height: 10vh;
-    position: fixed;
-    top: 0;
-    font-size: 2em;
-    width:80%;
-    margin-left: -1.4rem;
-    z-index: 1001;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-}
+
   
   #adminsection1{
     height: 100vh;
@@ -133,19 +121,19 @@
   }
 
   /* Add some basic styling to the table */
-.section2contentcontainer table {
+.section1contentcontainer table {
   border-collapse: collapse;
   width: 100%;
   
 }
 
-.section2contentcontainer table thead tr, .section2contentcontainer table tbody tr{
+.section1contentcontainer table thead tr, .section1contentcontainer table tbody tr{
   display: flex;
   justify-content: center;
 
 }
 
-.section2contentcontainer table thead tr th {
+.section1contentcontainer table thead tr th {
   font-size: 12px;
   border-collapse: collapse;
   height: 2rem;
@@ -156,7 +144,7 @@
   border-bottom: 1px #DC5341 solid;
 }
 
-.section2contentcontainer table tbody tr td{
+.section1contentcontainer table tbody tr td{
   font-size: 12px;
   border-collapse: collapse;
   height: 2rem;
@@ -167,7 +155,7 @@
   width: 100%;
 }
 
-.section2contentcontainer table tbody tr:hover{
+.section1contentcontainer table tbody tr:hover{
   background-color: #DC5341;
 }
 
@@ -178,22 +166,22 @@
   flex-direction: row;
 }
 
-.section2contentcontainer table tbody tr td button.update,
-.section2contentcontainer table tbody tr td button.delete{
+.section1contentcontainer table tbody tr td button.update,
+.section1contentcontainer table tbody tr td button.delete{
   background-color: transparent;
   border: none;
   width: 30%;
   padding: 5px;
 }
 
-.section2contentcontainer table tbody tr td button.update:hover,
-.section2contentcontainer table tbody tr td button.delete:hover{
+.section1contentcontainer table tbody tr td button.update:hover,
+.section1contentcontainer table tbody tr td button.delete:hover{
  opacity: 0.5;
  cursor: pointer;
 }
 
 
-.section2contentcontainer table tbody tr td button img{
+.section1contentcontainer table tbody tr td button img{
   width: 30px;
   background-color: transparent;
 }
