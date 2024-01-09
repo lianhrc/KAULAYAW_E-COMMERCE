@@ -13,6 +13,7 @@ const AdminSideSection = () => {
           <li><a href="#adminsection2">Order History</a></li>
           <li><a href="#adminsection3">Users</a></li>
           <li><a href="#adminsection4">Inventory</a></li>
+          <li><a href="#adminsection5">Logout</a></li>
         </ul>
       </nav>
     </aside>

@@ -1,6 +1,10 @@
 import express from "express";
 import mysql from "mysql";
 import cors from "cors";
+import path from 'path'
+import { error } from "console";
+
+
 
 const app = express();
 
@@ -43,6 +47,18 @@ app.post("/beans", (req, res) => {
         return res.json("Bean created successfully");
     });
 });
+app.delete("/beans/:id", (req, res) => {
+    const coffeeid = req.params.id; // Use the correct parameter name
+    const q = "DELETE FROM beans WHERE coffeeid = ?"; // Use the correct column name
+
+    db.query(q, [coffeeid], (error, data) => { // Use the correct variable name
+        if (error) return res.json(error); // Use the correct variable name
+        return res.json("Beans bean deleted successfully");
+    });
+});
+
+
+
 
 app.listen(8801, ()=>{
     console.log("Connected to backend!")

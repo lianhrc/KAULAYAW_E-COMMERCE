@@ -8,7 +8,7 @@
     display: block;
     flex-direction: column;
     padding-left: 17rem;
-
+    overflow-y: hidden;
 }
 /* External CSS file */
 
@@ -62,6 +62,8 @@
   .admin-side-section a {
     text-decoration: none;
     color: black;
+    font-family: 'Courier New', Courier, monospace;
+
     background-color: transparent;
 
 }
@@ -76,7 +78,7 @@
     height: 100vh;
     width: 100%;
     position: relative;
-    padding-top: 6rem;
+    padding-top: 4rem;
     display: flex;
     justify-content: center;
   }
@@ -120,22 +122,35 @@
     position: absolute;
   }
 
+  .section1contentcontainer{
+    overflow: auto;
+  }
   /* Add some basic styling to the table */
 .section1contentcontainer table {
   border-collapse: collapse;
+  font-family: 'Courier New', Courier, monospace;
   width: 100%;
-  
+
+}
+
+.section1contentcontainer table thead tr{
+  position: fixed;
+  width: 72%;padding-top: 2rem;
+  top: 0;
 }
 
 .section1contentcontainer table thead tr, .section1contentcontainer table tbody tr{
   display: flex;
   justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  
 
 }
 
 .section1contentcontainer table thead tr th {
   font-size: 12px;
   border-collapse: collapse;
+  font-family: 'Courier New', Courier, monospace;
   height: 2rem;
   padding: 8px;
   display: flex;
@@ -143,6 +158,7 @@
   width: 100%;
   border-bottom: 1px #DC5341 solid;
 }
+
 
 .section1contentcontainer table tbody tr td{
   font-size: 12px;
@@ -153,6 +169,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+
 }
 
 .section1contentcontainer table tbody tr:hover{
@@ -185,3 +202,98 @@
   width: 30px;
   background-color: transparent;
 }
+
+.Additembtn{
+  position: absolute;
+  width: 10%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  bottom: 5rem;
+  color: #DC5341;
+  border: 1px solid #DC5341;
+  cursor: pointer;
+}
+
+.Additembtn:hover{
+  background-color: #DC5341;
+  color: white;
+  transition: 0.3s;
+}
+
+
+
+/* Add this to your CSS file or style tag */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modal-content {
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  width: 20%;
+  margin-left: 15rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+
+
+.close-button {
+  position: absolute;
+  top: -12px;
+  right:-10px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 25px;
+  display: flex;
+  color: #DC5341;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 1px 5px 5px 5px rgba(0,0,0,0.10);
+}
+
+.addinputfield{
+  height: 2rem;
+  margin: 1rem 0;
+  width: 10rem;
+  padding-left: 5px;
+  border: 1px gray solid;
+}
+
+.addinputfield::placeholder{
+  color: gray;
+  opacity: 0.5;
+}
+
+.subbtn{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 30%;
+  padding: 10px;
+  background-color:#DC5341 ;
+  color: white;
+  border: 1px #DC5341 solid;
+  cursor: pointer;
+}
+
+
+.subbtn:hover{
+  color: #DC5341;
+  background-color: white;
+
+}
+
+

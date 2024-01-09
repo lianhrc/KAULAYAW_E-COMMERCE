@@ -19,9 +19,7 @@
     column-gap: 2em;
     row-gap: 2em;
     position: relative;
-    background-size: contain;
     overflow-y: auto;
-    background-image: url(../img/prodbg.png);
 }   
 
     
@@ -47,7 +45,6 @@
         text-align: center;
         background-color: white;
         position: relative;
-
     }
     
      .beans img{
@@ -99,3 +96,4 @@
     bottom: 0;
     left: 0;
 }
+

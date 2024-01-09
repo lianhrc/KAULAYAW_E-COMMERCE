@@ -19,6 +19,11 @@ const Products = () => {
     fetchAllBeans()
 },[])
 
+const f = new Intl.NumberFormat("en-us",{
+  currency: "PHP",
+  style: "currency"
+})
+
   return (
     <div className='Productspage'>
         <div className="ProductPageContent">
@@ -26,9 +31,9 @@ const Products = () => {
           <div className="beans">
             {beans.map(bean=>(
               <div className="bean" key={bean.coffeeid}>
-              {bean.coffeecover && <img src="bean.coffeecover" alt=""/>}
+              {bean.coffeecover && <img src={bean.coffeecover} alt=""/>}
                 <h4>{bean.coffeename}</h4>   
-                <span>{bean.coffeeprice}</span>
+                <span>{f.format(bean.coffeeprice)}</span>
                 <button className="addCart">Cart</button>
                 </div>
             ))}
