@@ -13,6 +13,7 @@
     position: relative;
     justify-content: center;
 }
+
 #section1{
     width: 100%;
     height: 100vh;
@@ -68,6 +69,7 @@ nav ul li{
 nav a{
     text-decoration: none;
     color: black;
+    font-size: 12px;
 }
 
 nav a:hover{
