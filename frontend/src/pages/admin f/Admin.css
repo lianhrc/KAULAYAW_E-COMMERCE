@@ -62,7 +62,6 @@
   .admin-side-section a {
     text-decoration: none;
     color: black;
-    font-family: 'Courier New', Courier, monospace;
 
     background-color: transparent;
 
@@ -128,7 +127,6 @@
   /* Add some basic styling to the table */
 .section1contentcontainer table {
   border-collapse: collapse;
-  font-family: 'Courier New', Courier, monospace;
   width: 100%;
 
 }
@@ -142,7 +140,6 @@
 .section1contentcontainer table thead tr, .section1contentcontainer table tbody tr{
   display: flex;
   justify-content: center;
-  font-family: 'Courier New', Courier, monospace;
   
 
 }
@@ -150,7 +147,6 @@
 .section1contentcontainer table thead tr th {
   font-size: 12px;
   border-collapse: collapse;
-  font-family: 'Courier New', Courier, monospace;
   height: 2rem;
   padding: 8px;
   display: flex;

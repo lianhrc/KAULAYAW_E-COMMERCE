@@ -182,9 +182,8 @@ const Admin = () => {
                                 />
                                 <input
                                   className="addinputfield"
-                                  type="text"
+                                  type="file"
                                   placeholder="beans photo"
-                                  value={inputs.coffeecover}
                                   onChange={handleChange}
                                   name="coffeecover"
                                 />
@@ -233,7 +232,7 @@ const Admin = () => {
                   />
                   <input
                     className='addinputfield'
-                    type='text'
+                    type='file'
                     placeholder='beans photo'
                     onChange={handleChange}
                     name='coffeecover'

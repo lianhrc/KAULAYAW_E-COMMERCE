@@ -1,14 +1,21 @@
+*{
+    font-family: 'Poppins', sans-serif;
+
+}
+
 .ProductsPageContainer{
     max-width: 100%;
     height: 100vh;
     margin: auto;
     justify-content: center;
+
 }
 
 
 
 .ProductPageContent{
     max-width: 100%;
+    background-color: #F1F0EE;
     margin: auto;
     height: 100vh;
     display: flex;
@@ -38,62 +45,71 @@
     }
     .bean{
         height: 400px;
-        padding: 5px;
+        padding: 3px;
         width: 300px;
         gap: 10px;
         align-items: center;
         text-align: center;
-        background-color: white;
+        background-color: #E2D9C8;
         position: relative;
     }
     
      .beans img{
         object-fit: cover;
         width: 100%;
-        height:100%;
+        height:80%;
         border: none;
     }
     .beans h4{
         font-size: 12px;
-        font-family: 'Courier New', Courier, monospace;
-        background-color: #FACA78;
+        color: #32281E;
+        background: none;
+        font-weight: 400;
         height:2rem;
         width: 40%;
         display: flex;
-        justify-content: center;
         align-items: center;        
         position: absolute;
-        top: 0;
-        left: 0;
+        bottom: 3rem;
+        padding-left: 10px;
     }
 
     .beans span{
         font-size: 12px;
-        font-family: 'Courier New', Courier, monospace;
-        background-color: #FACA78;
+        background-color: #32281E;
         height:2rem;
+        color: white;
         width: 20%;
         display: flex;
         justify-content: center;
-        align-items: center;        
+        align-items: center;      
+        border-radius: 4px;  
         position: absolute;
-        bottom: 0;
-        right: 0;
+        bottom: 8px;
+        right: 10px;
     }
 
 .addCart{
     font-size: 12px;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #FACA78;
+    background-color: transparent;
     height:2rem;
-    width: 15%;
+    width: 2rem;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;        
     position: absolute;
     justify-self: unset;
+    border-radius: 4px;  
     border: none;
-    bottom: 0;
-    left: 0;
+    color: white;
+    bottom: 8px;
+    left: 10px;
+}
+
+.addCart img{
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
 }
 

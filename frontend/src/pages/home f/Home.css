@@ -2,28 +2,35 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #F8EBE2;
+    background-color: #F1F0EE;
     scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 .HomePageContainer{
-    max-width: 75em;
+    width: 100%;
     height: 100vh;
     margin: auto;
     position: relative;
     justify-content: center;
+    
 }
 
 #section1{
-    width: 100%;
+    width: 75em;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    margin: auto;
+   
 }
+
 .headersection{
     height: 10em;
     width: 100%;
     display: flex;
+    
 }
 
 .leftheader{
@@ -68,7 +75,7 @@ nav ul li{
 
 nav a{
     text-decoration: none;
-    color: black;
+    color: #32281E;
     font-size: 12px;
 }
 
@@ -111,18 +118,18 @@ transition: 0.3s;
 .leftintrosection{
   flex: 40%;
   height: 80%;
-  padding: 2em 2em 2em 2em;
+  padding: 5em 2em 2em 2em;
 }
 .left-one{
     height: 4em;
     font-size: 1.2em;
-    color: #DC5341;
+    color: #32281E;
     text-align: left;
 }
 
 .left-two{
     font-size: 1.2em;
-    color: #DC5341;
+    color: #32281E;
     padding-left: 10rem;
 }
 
@@ -144,10 +151,11 @@ transition: 0.3s;
 
 .left-four button{
     width: 30%;
-    background-color: transparent;
+    background-color: #32281E;
     height: 2rem;
-    border: 2px solid #DC5341;
-    color: #DC5341;
+    border-radius: 2rem;
+    border: none;
+    color: #F1F0EE;
 }
 
 .left-four button:hover{
@@ -156,21 +164,27 @@ transition: 0.3s;
 }
 
 .rightintrosection{
-    margin-right: 1.5em;
-    flex: 50%;
-    background-color: white;
+    flex: 30%;
+    background-color: black;
     height: 80%;
-    padding: 0.3em;
+    padding: 0.1em;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
--moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
 }
+
+.rightintrosection{ 
+    height: 30rem;
+}
+
 .rightimgcontainer{
-    width: 100%;
     background-color: black;
     background-image: url(../img/home-page.png);
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    background-position: center;
+    width: 100%;
     height: 100%;
     background-blend-mode:lighten;
 }
@@ -191,7 +205,8 @@ transition: 0.3s;
 
 .headersection2 h1{
    font-size: 2em;
-   color: #DC5341;
+   color: #32281E;
+
 }
 
 .section2content{
@@ -210,12 +225,14 @@ transition: 0.3s;
     text-align: center;
     background-color: white;
     position: relative;
-    padding: 0.5rem;
     flex-direction: column;
     display: flex;
+    border-radius: 15px;
+
 }
 
 .imgcontainer1{
+    
     height: 80%;
     width: auto;
     background-image: url(../img/prod1.png);
@@ -263,8 +280,10 @@ transition: 0.3s;
     font-family: 'Poppins', Courier, monospace;
     font-weight: 400;
     font-size: 9px;
+    
     background-color: transparent;
-    color: #DC5341;
+    color: #32281E;
+
     text-transform: uppercase;
   }
   
@@ -308,9 +327,9 @@ transition: 0.3s;
 
 
 .imgcontainer1 h3, .imgcontainer2 h3, .imgcontainer3 h3{
-    background-color: #FACA78;
+    background-color: #32281E;
     width: 40%;
-    font-family: 'Poppins', Courier, monospace;
+    color: white;
     font-weight: 300;
     font-size: small;
     padding: 0.5rem 0;
@@ -319,7 +338,6 @@ transition: 0.3s;
 .section2container{
     height: 70%;
     width: 60%;
-    background-color: lightcoral;
 }
 
 #section3{
@@ -327,6 +345,7 @@ transition: 0.3s;
     height: 100vh;
     display: flex;
     align-items: center;    
+    background-color: #E7E1D5;
 }
 
 .section3leftcontainer{
@@ -334,6 +353,7 @@ transition: 0.3s;
     height: 80vh;
     position: relative;
     display: flex;
+    background-color: transparent;
     justify-content: center;
     align-items: center;
 }
@@ -342,61 +362,76 @@ transition: 0.3s;
     position: absolute;
     background-image: url(../img/aboutus.png);
     height: 100%;
+    border-radius: 1rem;
     width: 80%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: white;
-    border: 5px solid white;
+    border: 2px solid black ;
 }
 
 .section3rightcontainer{
+    background-color: transparent;
     flex: 40%;
     height: 80vh;
     display: flex;
-    padding-top: 1em;
-
     flex-direction: column;
 }
 
 .section3rightcontainer h1{
     font-size: 3em;
+    background-color: transparent;
     margin-top: 0.5em;
-    color: #DC5341;
+    color: #32281E;
+    margin-bottom: 2rem;
 }
 
 .section3rightcontainer .p1{
     height: 2em;
     text-align: center;
+    width: 80%;
+
+    background-color: transparent;
 }
 
 .section3rightcontainer .p2{
+    background-color: transparent;
     height: 10em;
+    line-height: 1.5rem;
     text-align: center;
+    width: 80%;
 }
 
 .section3rightcontainer p span{
-   color: #DC5341;
+   background-color: transparent;
+
 }
 
 #section4{
     width: 100%;
     height: 50%;
     display: flex;
-    
 }
 .leftsection4{
     flex: 50%;
+    background-color: #32281E;
     display: flex;
+    justify-content: end;
     align-items: center;
 
 }
 .leftsection4 a{
+    
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    width: 30%;
+    border-radius: 50%;
     align-items: center;
 }
 .rightsection4{
+    background-color: #32281E;
+
     flex: 50%;
     display: flex;
     justify-content: left;
@@ -595,8 +630,114 @@ transition: 0.3s;
 
 
 
+/* Explore pop up */
+
+.exploremaincontainer{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    overflow-x: hidden;
+}
+.subexplorcontainer{
+  
+
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background: none;
+    flex-wrap: wrap;
+    padding: 3px;
+    gap: 3px;
+    justify-content: center;
+}
+.subexplorcontainer div{
+    width: 20rem;
+    height: 20rem;
+}
+
+.div1 {
+   background-image: url(../img/one.png);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
 
 
+.div2 {
+    background-image: url(../img/two.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+ .div3 {
+    background-image: url(../img/eleven.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+ .div4 {
+    background-image: url(../img/twelve.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+ .div5 {
+    background-image: url(../img/seven.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+ .div6 {
+    background-image: url(../img/six.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+ .div7 {
+    background-image: url(../img/eight.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+ }
+ .div8 {
+    background-image: url(../img/five.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+ }
+ .div9 {
+    background-image: url(../img/ten.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+ }
+ .div10 {
+    background-image: url(../img/nine.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+ .div11 {
+    background-image: url(../img/three.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+ .div12 {
+    background-image: url(../img/four.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
 
 
 

@@ -9,11 +9,14 @@ import CartSidebar from '../popups/CartSidebar'; // Update the path based on you
 import { Link } from 'react-router-dom';
 
 
+
+
 const Home = () =>{
 
 
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalExploreIsOpen, setmodalExploreIsOpen] = useState(false);
 
   // Use react-spring for animation
   const animation = useSpring({
@@ -27,6 +30,14 @@ const Home = () =>{
 
   const closeModal = () => {
     setModalIsOpen(false);
+  };
+
+  const openExploreModal = () => {
+    setmodalExploreIsOpen(true);
+  };
+
+  const closeExploreModal = () => {
+    setmodalExploreIsOpen(false);
   };
 
   const handleLogin = () => {
@@ -96,7 +107,7 @@ const Home = () =>{
                     }}
                   >
                         <div className="modalimgcontainer">
-                            <img className='logo-icon-modal' src={iconlogo} alt="Your Description" />
+                            <mg className='logo-icon-modal' src={iconlogo} alt="Your Description" />
                         </div>
                     <animated.div style={animation}>
                         
@@ -133,13 +144,49 @@ const Home = () =>{
                       <p>In the heart of the tropics, where sunlit fields unfold,<br/>Coffee beans, a treasure, in the soil, they're bold.<br/>Born of Philippine soil, nurtured by the sun's embrace,<br/>Each bean tells a story, a journey filled with grace.</p>
                     </div>
                     <div className="left-four">
-                          <button>Explore</button>
+                          <button  onClick={openExploreModal}>Explore</button> 
                     </div>
+                        <Modal
+                        isOpen={modalExploreIsOpen}
+                        onRequestClose={closeExploreModal}
+                        contentLabel="Login Modal"
+                        style={{
+                          overlay: {
+                            background: 'rgba(0, 0, 0, 0.5)',
+                          },
+                          content: {
+                            border: 'none',
+                            padding: '0',
+                            maxWidth: '1000px',
+                            margin: 'auto',
+                            background: 'none',
+                            backgroundColor: 'transparent',
+                          },
+                        }}
+                        >   
+                        <div className="exploremaincontainer">
+                        
+                        <div className="subexplorcontainer">
+                        <div className="div1"></div>
+                        <div className="div2"></div>
+                              <div className="div3"></div>
+                              <div className="div4"></div>
+                              <div className="div5"></div>
+                              <div className="div6"></div>
+                              <div className="div7"></div>
+                              <div className="div8"></div>
+                              <div className="div9"></div>
+                              <div className="div10"></div>
+                              <div className="div11"></div>
+                              <div className="div12"></div>
+                              </div>
+                              </div>
+                      </Modal>
                  </div>
                  <div className="rightintrosection">
-                  <div className="rightimgcontainer">
-                    
-                  </div>
+                    <div className="rightimgcontainer">
+                      
+                    </div>
                  </div>
             </div>
           </div>
