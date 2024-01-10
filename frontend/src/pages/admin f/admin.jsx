@@ -75,14 +75,23 @@ const Admin = () => {
 
   const handleAddClick = async () => {
     try {
-      await axios.post('http://localhost:8801/beans', inputs);
+      console.log('Handling Add Click');
+      const formData = new FormData();
+      formData.append('coffeename', inputs.coffeename);
+      formData.append('coffeecover', inputs.coffeecover);
+      formData.append('coffeeprice', inputs.coffeeprice);
+  
+      await axios.post('http://localhost:8801/beans', formData);
       console.log('Item added successfully!');
       navigate('/admin');
-      closeAddModal(); // Close the modal after successful submission
+      closeAddModal();
     } catch (error) {
       console.error('Error adding item:', error);
     }
   };
+  
+  
+
   const handleUpdateClick = async () => {
     try {
       const updatedItem = {
@@ -151,7 +160,10 @@ const Admin = () => {
                     <td>{bean.coffeeid}</td>
                     <td>{bean.coffeename}</td>
                     <td>{f.format(bean.coffeeprice)}</td>
-                    <td>{bean.coffeecover}</td>
+                    <td>
+                    <img src={`http://localhost:8801/public/images/${bean.coffeecover}`} width="50" height="50" alt={bean.coffeename} />
+                  </td>
+
                     <td className='actionstd'>
                       <button className='update' onClick={() => openUpdateModal(bean)}>
                         <img src={updateicon} alt='' />
@@ -214,7 +226,8 @@ const Admin = () => {
                 <span className='close-button' onClick={closeAddModal}>
                   &times;
                 </span>
-                <form onSubmit={handleAddClick}>
+                <form onSubmit={handleAddClick} encType="multipart/form-data">
+
                   <h2>Add Item</h2>
                   <input
                     className='addinputfield'
@@ -234,7 +247,7 @@ const Admin = () => {
                     className='addinputfield'
                     type='file'
                     placeholder='beans photo'
-                    onChange={handleChange}
+                    onChange={(e) => setInputs((prev) => ({ ...prev, coffeecover: e.target.files[0] }))}
                     name='coffeecover'
                   />
                   <button className='subbtn' type='submit'>
