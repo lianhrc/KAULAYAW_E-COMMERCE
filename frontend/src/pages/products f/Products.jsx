@@ -40,11 +40,8 @@ const Products = () => {
               <div className="bean" key={bean.coffeeid}>
                 {bean.coffeecover && (
                   <div>
-                    <img
-                      src={`http://localhost:8801/public/images/${bean.coffeecover}`}
-                      alt={bean.coffeename} 
-                      style={{ width: '100px', height: '100px' }}
-                    />
+                  <img src={`http://localhost:8801/images/`+ bean.coffeecover } width="50" height="50" alt={bean.coffeename} />
+
                   </div>
                 )}
 

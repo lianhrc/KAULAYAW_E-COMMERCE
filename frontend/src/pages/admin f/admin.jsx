@@ -70,8 +70,13 @@ const Admin = () => {
   };
 
   const handleChange = (e) => {
-    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (e.target.name === 'coffeecover') {
+      setInputs((prev) => ({ ...prev, coffeecover: e.target.files[0] }));
+    } else {
+      setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    }
   };
+  
 
   const handleAddClick = async () => {
     try {
@@ -161,8 +166,8 @@ const Admin = () => {
                     <td>{bean.coffeename}</td>
                     <td>{f.format(bean.coffeeprice)}</td>
                     <td>
-                    <img src={`http://localhost:8801/public/images/${bean.coffeecover}`} width="50" height="50" alt={bean.coffeename} />
-                  </td>
+                    <img src={`http://localhost:8801/images/`+ bean.coffeecover } width="80" height="80" alt={bean.coffeename} />
+                     </td>
 
                     <td className='actionstd'>
                       <button className='update' onClick={() => openUpdateModal(bean)}>
@@ -193,13 +198,13 @@ const Admin = () => {
                                   name="coffeeprice"
                                 />
                                 <input
-                                  className="addinputfield"
-                                  type="file"
-                                  placeholder="beans photo"
-                                  onChange={handleChange}
-                                  name="coffeecover"
+                                  className='addinputfield'
+                                  type='file'
+                                  placeholder='beans photo'
+                                  onChange={(e) => setInputs((prev) => ({ ...prev, coffeecover: e.target.files[0] }))}
+                                  name='coffeecover'
                                 />
-                                <button className="subbtn" onClick={handleUpdateClick} type="button">
+                                  <button className="subbtn" onClick={handleUpdateClick} type="submit">
                                   Submit
                                 </button>
                               </form>

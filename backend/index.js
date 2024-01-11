@@ -60,6 +60,7 @@ app.post("/beans", adminupload.single('coffeecover'), (req, res) => {
     });
 });
 
+
 app.delete("/beans/:id", (req, res) => {
     const coffeeid = req.params.id;
     const q = "DELETE FROM beans WHERE coffeeid = ?";
