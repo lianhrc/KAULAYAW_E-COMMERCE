@@ -166,7 +166,7 @@ const Admin = () => {
                     <td>{bean.coffeename}</td>
                     <td>{f.format(bean.coffeeprice)}</td>
                     <td>
-                    <img src={`http://localhost:8801/images/`+ bean.coffeecover } width="80" height="80" alt={bean.coffeename} />
+                    <img src alt={`image of ${bean.coffeename}`} />
                      </td>
 
                     <td className='actionstd'>
