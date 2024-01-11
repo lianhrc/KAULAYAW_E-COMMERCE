@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import CartSidebar from '../popups/CartSidebar'; // Update the path based on your project structure
 import { useNavigate, Link } from 'react-router-dom'
-
+import kaulayawvid from "../video/kaulayaw_vid_ads.mp4"
 
 
 
@@ -85,7 +85,7 @@ const Home = () =>{
                       <li><a href='#section1'>HOME</a></li>
                       <li><Link to="/products">PRODUCTS</Link></li>
                       <li><a href='#section3'>ABOUT</a></li>
-                      <li><a href='#section4'>CONTACT</a></li>
+                      <li><a href='#section4'>CONTACTS</a></li>
                     </ul>
                 </nav>
               </div>
@@ -190,9 +190,24 @@ const Home = () =>{
                       </Modal>
                  </div>
                  <div className="rightintrosection">
-                    <div className="rightimgcontainer">
-                      
-                    </div>
+                 <video
+                 autoPlay
+                 loop
+                 muted
+                 style={
+                  {
+                    width:"100%",
+                    height:"100%",
+                    objectFit:"contain",
+                    zIndex:"-1",
+                    background:"black"
+                  }
+                 }
+                 
+                 >
+                 <source src={kaulayawvid} typeof="video/mp4"/>
+                 </video>
+                    
                  </div>
             </div>
           </div>

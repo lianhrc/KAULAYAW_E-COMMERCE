@@ -95,10 +95,10 @@ const Products = () => {
       <div className="centerheader">
         <nav>
             <ul>
-              <li><a href='/'>HOME</a></li>
-              <li><Link to="/products">PRODUCTS</Link></li>
-              <li><a href='#section3'></a></li>
-              <li><a href='#section4'></a></li>
+            <li><a href='/'>HOME</a></li>
+            <li><Link to="/products">PRODUCTS</Link></li>
+            <li><a href='/'>ABOUT</a></li>
+            <li><a href='/'>CONTACTS</a></li>
             </ul>
         </nav>
       </div>
@@ -200,6 +200,9 @@ const Products = () => {
           </div>
     
       </div>
+
+
+    
     </div>
   );
 };
