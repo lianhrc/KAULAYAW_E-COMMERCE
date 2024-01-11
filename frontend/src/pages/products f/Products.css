@@ -11,6 +11,13 @@
 
 }
 
+.Productheadersection{
+    height: 10em;
+    width: 75em;
+    display: flex;
+
+    margin: auto;
+}
 
 
 .ProductPageContent{
@@ -26,8 +33,65 @@
     column-gap: 2em;
     row-gap: 2em;
     position: relative;
-    overflow-y: auto;
 }   
+
+.checkiconcontainermodal{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+    height: 30%;
+    padding-top: 5rem;
+    background-color: #E2D9C8;
+}
+
+.checkiconmodal{
+    width: 20%;
+    border-radius: 50%;
+    background-color: transparent;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.success_p{
+    text-align: center;
+    background-color: transparent;
+    margin-top: 1.5rem;    
+}
+
+.procceedbtn{
+    width: 50%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: #32281E;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+.procceedbtn:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+.checkiconcontainermodal .closemodal{
+    position: absolute; 
+    top: -5px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 28px;
+    display: flex;
+    color: #32281E;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 1px 5px 5px 5px rgba(0,0,0,0.10);
+}
+
+
 
     
     .beans{

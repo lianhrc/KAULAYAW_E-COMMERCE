@@ -749,7 +749,7 @@ transition: 0.3s;
 
  .subexplorcontainer div:hover{
     transform: scale(1.3);
-    transition: 2s;
+    transition: 1s;
     cursor: pointer;
 
 }
