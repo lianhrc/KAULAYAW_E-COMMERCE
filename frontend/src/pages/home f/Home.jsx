@@ -6,14 +6,20 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import CartSidebar from '../popups/CartSidebar'; // Update the path based on your project structure
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'
+
 
 
 
 
 const Home = () =>{
 
+  const navigate = useNavigate();
 
+  const handleViewMoreClick = () => {
+    // Replace '/product' with the actual path you want to navigate to
+    navigate('/products');
+  };
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalExploreIsOpen, setmodalExploreIsOpen] = useState(false);
@@ -193,13 +199,14 @@ const Home = () =>{
           <div id='section2'>
               <div className="headersection2">
                   <h1>OUR SPECIAL OFFERS</h1>
+                  <p>Discover the perfect harmony of flavors with our three classic coffee blends at Kaulayaw Coffee. Introducing Irog, Liyag, and our exquisite Kaulayaw Special Blend.</p>
               </div>
               <div className="section2content">
                     <div className="box" id='box1'>
                       <div className="imgcontainer1">
                           <h3>Kaulayaw Blend</h3>
                       </div>
-                      <button onClick={openModal} className='cta'><span class="hover-underline-animation"> view more </span>
+                      <button onClick={handleViewMoreClick} className='cta'><span class="hover-underline-animation"> view more </span>
                           <svg
                             id="arrow-horizontal"
                             xmlns="http://www.w3.org/2000/svg"
@@ -220,7 +227,7 @@ const Home = () =>{
                       <div className="imgcontainer2">
                           <h3>Irog Blend</h3>
                       </div>
-                      <button className='cta'><span class="hover-underline-animation"> view more </span>
+                      <button onClick={handleViewMoreClick} className='cta'><span class="hover-underline-animation"> view more </span>
                           <svg
                             id="arrow-horizontal"
                             xmlns="http://www.w3.org/2000/svg"
@@ -241,7 +248,7 @@ const Home = () =>{
                       <div className="imgcontainer3">
                          <h3>Liyag Blend</h3>
                       </div>
-                      <button className='cta'><span class="hover-underline-animation"> view more </span>
+                      <button onClick={handleViewMoreClick} className='cta'><span class="hover-underline-animation"> view more </span>
                           <svg
                             id="arrow-horizontal"
                             xmlns="http://www.w3.org/2000/svg"

@@ -198,18 +198,30 @@ transition: 0.3s;
 
 .headersection2{
     height: 10%;
-    padding-top: 3rem;
     width: 100%;
+    padding-top: 2rem;
     text-align: center;
 }
 
 .headersection2 h1{
    font-size: 2em;
+   background-color: #E7E1D5;
    color: #32281E;
+   margin-bottom: 2rem;
 
 }
 
+.headersection2 p{
+    height: 2rem;
+    font-size: 14px;
+    color: #32281E;
+    width: 70%;
+    margin: auto;
+ 
+ }
+
 .section2content{
+    margin-top: 4rem;
     display: flex;
     height: 100vh;
     flex-wrap: wrap;
