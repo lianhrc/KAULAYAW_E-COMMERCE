@@ -71,13 +71,13 @@ app.delete("/beans/:id", (req, res) => {
     });
 });
 
-app.put("/beans/:id", (req, res) => {
+app.put("/beans/:id", adminupload.single('coffeecover'), (req, res) => {
     const coffeeid = req.params.id;
     const q = "UPDATE beans SET coffeename = ?, coffeecover = ?, coffeeprice = ? WHERE coffeeid = ?";
     
     const values = [
         req.body.coffeename,
-        req.body.coffeecover,
+        req.file ? req.file.filename : req.body.coffeecover, // Use new image if provided, else use the existing one
         req.body.coffeeprice,
         coffeeid,
     ];
@@ -87,6 +87,7 @@ app.put("/beans/:id", (req, res) => {
         return res.json("Bean updated successfully");
     });
 });
+
 
 app.listen(8801, () => {
     console.log("Connected to backend!")

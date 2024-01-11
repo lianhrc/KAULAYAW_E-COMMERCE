@@ -99,36 +99,46 @@ const Admin = () => {
 
   const handleUpdateClick = async () => {
     try {
-      const updatedItem = {
-        ...selectedItem,
-        coffeename: inputs.coffeename,
-        coffeeprice: inputs.coffeeprice,
-        coffeecover: inputs.coffeecover,
-      };
-  
-      await axios.put(`http://localhost:8801/beans/${selectedItem.coffeeid}`, updatedItem);
-  
-      console.log('Item updated successfully!');
-  
-      // Update the local state with the updated item
-      setBeans((prevBeans) =>
-        prevBeans.map((bean) => (bean.coffeeid === selectedItem.coffeeid ? updatedItem : bean))
-      );
-  
-      // Close the modal after successful submission
-      closeUpdateModal();
-  
-      // Reset the state
-      setSelectedItem(null);
-      setInputs({
-        coffeename: '',
-        coffeecover: '',
-        coffeeprice: null,
-      });
+        const updatedItem = {
+            ...selectedItem,
+            coffeename: inputs.coffeename,
+            coffeeprice: inputs.coffeeprice,
+        };
+
+        // If a new image is selected, update it; otherwise, keep the existing one
+        if (inputs.coffeecover instanceof File) {
+            const formData = new FormData();
+            formData.append('coffeename', inputs.coffeename);
+            formData.append('coffeecover', inputs.coffeecover);
+            formData.append('coffeeprice', inputs.coffeeprice);
+
+            await axios.put(`http://localhost:8801/beans/${selectedItem.coffeeid}`, formData);
+        } else {
+            await axios.put(`http://localhost:8801/beans/${selectedItem.coffeeid}`, updatedItem);
+        }
+
+        console.log('Item updated successfully!');
+
+        // Update the local state with the updated item
+        setBeans((prevBeans) =>
+            prevBeans.map((bean) => (bean.coffeeid === selectedItem.coffeeid ? updatedItem : bean))
+        );
+
+        // Close the modal after successful submission
+        closeUpdateModal();
+
+        // Reset the state
+        setSelectedItem(null);
+        setInputs({
+            coffeename: '',
+            coffeecover: '',
+            coffeeprice: null,
+        });
     } catch (error) {
-      console.error('Error updating item:', error);
+        console.error('Error updating item:', error);
     }
-  };
+};
+
   
 
   const handleclickDelete = async (id) => {

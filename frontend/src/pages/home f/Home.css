@@ -667,6 +667,13 @@ transition: 0.3s;
    background-size: cover;
 }
 
+.div1 {
+    background-image: url(../img/one.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
 
 .div2 {
     background-image: url(../img/two.png);
@@ -739,6 +746,13 @@ transition: 0.3s;
     background-size: cover;
  }
 
+
+ .subexplorcontainer div:hover{
+    transform: scale(1.3);
+    transition: 2s;
+    cursor: pointer;
+
+}
 
 
 
