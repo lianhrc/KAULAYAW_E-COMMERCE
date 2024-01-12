@@ -14,6 +14,14 @@ import kaulayawvid from "../video/kaulayaw_vid_ads.mp4"
 
 const Home = () =>{
 
+  const [cartItems, setCartItems] = useState([]); // new state for cart items
+
+  const handleAddToCart = (bean) => {
+    setCartItems((prevCartItems) => [...prevCartItems, bean]);
+    openCartModal();
+  };
+
+
   const navigate = useNavigate();
 
   const handleViewMoreClick = () => {
@@ -46,6 +54,15 @@ const Home = () =>{
     setmodalExploreIsOpen(false);
   };
 
+  
+  const openCartModal = () => {
+    setIsCartModalOpen(true);
+  };
+  
+  const closeCartModal = () => {
+    setIsCartModalOpen(false);
+  };
+
   const handleLogin = () => {
     // Implement your login logic here
     console.log('Logging in...');
@@ -59,6 +76,7 @@ const Home = () =>{
   };
 
 
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
 
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -69,6 +87,13 @@ const Home = () =>{
 
   const handleCloseCart = () => {
     setIsCartOpen(false);
+  };
+  
+  const handleRemoveCartItem = (coffeeId) => {
+    // Implement logic to remove the item with the given coffeeId from the cart
+    // You can use setCartItems to update the cart state
+    const updatedCartItems = cartItems.filter(item => item.coffeeid !== coffeeId);
+    setCartItems(updatedCartItems);
   };
   
   return (
@@ -92,7 +117,7 @@ const Home = () =>{
               <div className="rightheader">
                   <button className='logo-icon' id="cart-button" onClick={handleOpenCart}><img className='cart-button' src={carticon} alt="Your Description" /></button> 
 
-                   <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} />
+                  <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} cartItems={cartItems} handleRemoveItem={handleRemoveCartItem} />
                   <button onClick={openModal}><img className='logo-icon' src={usericon} alt="Your Description" /></button>
                   <Modal
                     isOpen={modalIsOpen}

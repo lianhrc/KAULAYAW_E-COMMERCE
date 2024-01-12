@@ -91,6 +91,14 @@ const Products = () => {
   };
 
 
+  // In your Home or Products component
+const handleRemoveCartItem = (coffeeId) => {
+  // Implement logic to remove the item with the given coffeeId from the cart
+  // You can use setCartItems to update the cart state
+  const updatedCartItems = cartItems.filter(item => item.coffeeid !== coffeeId);
+  setCartItems(updatedCartItems);
+};
+
   return (
     <div className="Productspage">
     <div className="Productheadersection">
@@ -110,7 +118,7 @@ const Products = () => {
       <div className="rightheader">
           <button className='logo-icon' id="cart-button" onClick={handleOpenCart}><img className='cart-button' src={carticon} alt="Your Description" /></button> 
 
-          <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} cartItems={cartItems} />
+          <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} cartItems={cartItems} handleRemoveItem={handleRemoveCartItem} />
           <button onClick={openModal}><img className='logo-icon' src={usericon} alt="Your Description" /></button>
           <Modal
             isOpen={modalIsOpen}
