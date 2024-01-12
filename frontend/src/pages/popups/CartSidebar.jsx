@@ -3,8 +3,12 @@ import React from 'react';
 import './CartSidebar.css';
 import { useSpring, animated } from 'react-spring';
 
-const CartSidebar = ({ isOpen, handleClose }) => {
-     // Create an animation object
+
+const CartSidebar = ({ isOpen, handleClose, cartItems }) => {
+  const f = new Intl.NumberFormat('en-us', {
+    currency: 'PHP',
+    style: 'currency',
+  });
      const sidebarAnimation = useSpring({
       transform: isOpen ? 'translateX(0%)' : 'translateX(100%)', // Slide in from the right
     });
@@ -15,7 +19,6 @@ const CartSidebar = ({ isOpen, handleClose }) => {
     
   return (
     <>
-    <animated.div style={overlayAnimation} className="overlay" onClick={handleClose} />
     <animated.div style={sidebarAnimation} className="sidebar-container">
       <div className="sidebar-content">
         <div className="sidebarheader">
@@ -29,13 +32,15 @@ const CartSidebar = ({ isOpen, handleClose }) => {
         </div>
         <div className="carttablecontainer">
           <table className='tableproduct'>
-                <tbody>
-                  <tr>
-                    <td>Product Image</td>
-                    <td>Quantity</td>
-                    <td>Price</td>
-                  </tr>
-                </tbody>
+            <tbody>
+            {cartItems.map((item) => (
+              <tr key={item.coffeeid}>
+                <td>{item.coffeename}</td>
+                <td>1</td> {/* Placeholder for quantity, you can modify as needed */}
+                <td>{f.format(item.coffeeprice)}</td>
+              </tr>
+            ))}
+          </tbody>
           </table>
         </div>
           <div className="checkoutbtncontainer">

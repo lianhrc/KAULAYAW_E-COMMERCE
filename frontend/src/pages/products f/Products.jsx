@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import checkicon from '../img/check.png'
-import addtocartIcon from '../img/shopping-bag.png';
 import addingtocartitem from '../img/addingtocart.png';
 import iconlogo from '../img/icon-logo.png';
 import carticon from '../img/shopping-bag.png';
@@ -15,6 +14,12 @@ import CartSidebar from '../popups/CartSidebar'; // Update the path based on you
 
 const Products = () => {
   const [beans, setBeans] = useState([]);
+  const [cartItems, setCartItems] = useState([]); // new state for cart items
+
+  const handleAddToCart = (bean) => {
+    setCartItems((prevCartItems) => [...prevCartItems, bean]);
+    openCartModal();
+  };
 
   useEffect(() => {
     const fetchAllBeans = async () => {
@@ -105,7 +110,7 @@ const Products = () => {
       <div className="rightheader">
           <button className='logo-icon' id="cart-button" onClick={handleOpenCart}><img className='cart-button' src={carticon} alt="Your Description" /></button> 
 
-           <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} />
+          <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} cartItems={cartItems} />
           <button onClick={openModal}><img className='logo-icon' src={usericon} alt="Your Description" /></button>
           <Modal
             isOpen={modalIsOpen}
@@ -162,7 +167,7 @@ const Products = () => {
 
                 <h4>{bean.coffeename}</h4>
                 <span>{f.format(bean.coffeeprice)}</span>
-                <button className='addCart' onClick={() => { openCartModal(); console.log(`Add to cart: ${bean.coffeename}`); }}>
+                <button className='addCart' onClick={() => handleAddToCart(bean)}>
                 <img src={addingtocartitem} alt="Add to Cart" />
              </button>
              <Modal

@@ -91,6 +91,7 @@
   .tableproduct tbody{
     display: flex;
     text-align: center;
+    flex-direction: column;
   }
 
   .tableproduct tbody tr {
