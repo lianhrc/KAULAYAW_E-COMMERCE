@@ -20,7 +20,6 @@
     width: 700px; 
     z-index: 999; /* Set a high z-index to ensure it's on top */
     transition: opacity 0.3s ease; /* Add a smooth transition effect */
-    background: white;
   }
   
   .sidebar-content {
@@ -99,14 +98,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    height: 3rem;
   }
   .tableproduct tbody tr td{
     background-color: transparent;
+    display: flex;
+    justify-content: center;
   }
 
   .tableproduct tbody tr:hover{
-    background-color: #9b4f4f;
+    background-color: #d7d5d5;
   }
   
   .checkoutbtncontainer{
@@ -127,9 +128,33 @@
     cursor: pointer;
   }
 
-  
-
-
-
+  .quantitybtn{
+    display: flex;
+  }
  
 
+.trashicon{
+  background-color: transparent;
+}
+
+.quantitybtn .addquanbtn:hover,
+.quantitybtn .minusquanbtn:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+
+.quantitybtn .addquanbtn,
+.quantitybtn .minusquanbtn{
+ font-size: large;
+ font-weight: 500;
+ background-color: #32281E;
+ width: 1.5rem;
+ height: 1.5rem;
+ display: flex;
+margin: auto;
+justify-content: center;
+align-items: center;
+ color: white;
+ border-radius: 50%;
+}

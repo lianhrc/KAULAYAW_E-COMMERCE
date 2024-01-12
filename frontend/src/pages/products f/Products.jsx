@@ -47,9 +47,6 @@ const Products = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
-
-
-  // Use react-spring for animation
   const animation = useSpring({
     opacity: modalIsOpen ? 1 : 0,
     transform: modalIsOpen ? 'scale(1)' : 'scale(0.8)',
@@ -86,6 +83,7 @@ const Products = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleOpenCart = () => {
+    closeCartModal();
     setIsCartOpen(true);
   };
 
@@ -94,10 +92,9 @@ const Products = () => {
   };
 
 
-  // In your Home or Products component
+
 const handleRemoveCartItem = (coffeeId) => {
-  // Implement logic to remove the item with the given coffeeId from the cart
-  // You can use setCartItems to update the cart state
+
   const updatedCartItems = cartItems.filter(item => item.coffeeid !== coffeeId);
   setCartItems(updatedCartItems);
 };
@@ -181,6 +178,8 @@ const handleRemoveCartItem = (coffeeId) => {
                 <button className='addCart' onClick={() => handleAddToCart(bean)}>
                 <img src={addingtocartitem} alt="Add to Cart" />
              </button>
+             <animated.div style={animation}>
+             </animated.div>
              <Modal
                 isOpen={isCartModalOpen}
                   onRequestClose={closeCartModal}

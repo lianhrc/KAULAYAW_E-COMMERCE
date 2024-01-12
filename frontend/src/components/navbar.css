@@ -1,0 +1,84 @@
+
+.headersection{
+    height: 10em;
+    width: 100%;
+    display: flex;
+    
+}
+
+.leftheader{
+    flex: 1fr;
+    width: auto; /* Set the width of the container */
+    height: auto; /* Set the height of the container */
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    justify-content: left;
+}
+
+.logo-icon {
+    max-width: 200px; 
+    max-height: 200px; 
+    cursor: pointer;
+    
+    background-color: transparent;
+
+} 
+
+
+.centerheader{
+    flex: 40%;
+    padding-right: 20rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+nav ul li{
+    list-style: none;
+}
+
+
+nav a{
+    text-decoration: none;
+    color: #32281E;
+    font-size: 12px;
+}
+
+nav a:hover{
+    cursor: pointer;
+    color: #DC5341;
+    transition: 0.3s;
+}
+.rightheader{
+    flex: 20%;
+    display: flex;
+    max-width: 10%;
+    flex-direction: row;
+    justify-content: right;
+    height: 3rem;
+    margin: auto;
+}
+
+.rightheader button{
+    border: none;
+    background: transparent;
+    width:180%;    
+}
+.rightheader button img{
+    max-width: 30px; /* Ensure the logo doesn't exceed the width of its container */
+    max-height: 30px; 
+    cursor: pointer;
+    vertical-align: center;
+}
+.rightheader button img:hover{
+   opacity: 0.6;
+transition: 0.3s;
+}

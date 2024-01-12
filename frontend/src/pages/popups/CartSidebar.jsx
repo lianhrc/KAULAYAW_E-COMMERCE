@@ -3,10 +3,11 @@ import React from 'react';
 import './CartSidebar.css';
 import { useSpring, animated } from 'react-spring';
 import { useCart } from '../../components/CartContext';
+import trashicon from '../img/trash.png'
 
 
 const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
-  const { cartItems,removeFromCart  } = useCart();
+  const { cartItems,removeFromCart, updateCartItemQuantity   } = useCart();
   const f = new Intl.NumberFormat('en-us', {
     currency: 'PHP',
     style: 'currency',
@@ -20,8 +21,17 @@ const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
     opacity: isOpen ? 0.5 : 0,
   });
 
+  const handleIncreaseQuantity = (itemId) => {
+    updateCartItemQuantity(itemId, 1); // Increase quantity by 1
+  };
+
+  const handleDecreaseQuantity = (itemId) => {
+    updateCartItemQuantity(itemId, -1); // Decrease quantity by 1
+  };
+
   return (
     <>
+    <animated.div style={overlayAnimation} className="overlay" onClick={handleClose}></animated.div>
       <animated.div style={sidebarAnimation} className="sidebar-container">
         <div className="sidebar-content">
           <div className="sidebarheader">
@@ -32,6 +42,7 @@ const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
             <p className='prodheader'>PRODUCT</p>
             <p>QUANTITY</p>
             <p>TOTAL</p>
+            <p></p>
           </div>
           <div className="carttablecontainer">
             <table className='tableproduct'>
@@ -40,11 +51,15 @@ const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
                   cartItems.map((item) => (
                     <tr key={item.coffeeid}>
                       <td>{item.coffeename}</td>
-                      <td>1</td>
-                      <td>{f.format(item.coffeeprice)}</td>
+                      <td className='quantitybtn'>
+                      <button className='minusquanbtn' onClick={() => updateCartItemQuantity(item.coffeeid, -1)}>-</button>
+                        {item.quantity} {/* Display the quantity */}
+                      <button className='addquanbtn' onClick={() => updateCartItemQuantity(item.coffeeid, 1)}>+</button>
+                      </td>
+                      <td>{f.format(item.totalPrice )}</td>
                       <td>
                       <button onClick={() => removeFromCart(item.coffeeid)}>
-                      Remove
+                      <img className='trashicon' src={trashicon} alt="delete" />
                     </button>
                       </td>
                     </tr>
