@@ -200,6 +200,7 @@ const Home = () =>{
                     height:"100%",
                     objectFit:"contain",
                     zIndex:"-1",
+                    borderRadius:"10px",
                     background:"black"
                   }
                  }

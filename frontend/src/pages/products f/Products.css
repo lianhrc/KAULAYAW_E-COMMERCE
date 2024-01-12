@@ -105,32 +105,46 @@
         justify-content: center;
         flex-wrap: wrap;
         width: 90%;
-
+        background-color: transparent;
+        background: none;
     }
     .bean{
         height: 400px;
         padding: 3px;
         width: 300px;
         gap: 10px;
+        border-radius: 20px;
         align-items: center;
         text-align: center;
         background-color: #E2D9C8;
         position: relative;
+        background-color: transparent;
+        box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
     }
     
+    .imgcontainer{
+        background: none;
+    }
+
      .beans img{
         object-fit: cover;
         width: 100%;
         height:80%;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
         border: none;
+        background-color: transparent;
+        background: none;
     }
     .beans h4{
-        font-size: 12px;
+        font-size: 16px;
         color: #32281E;
         background: none;
-        font-weight: 400;
+        font-weight: 500;
         height:2rem;
-        width: 40%;
+        width: 50%;
         display: flex;
         align-items: center;        
         position: absolute;
@@ -175,6 +189,9 @@
     height: 25px;
     width: 25px;
     background-color: transparent;
+}
+.addCart:hover{
+    opacity: 0.5;
 }
 
 

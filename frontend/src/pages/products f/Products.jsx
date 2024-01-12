@@ -154,7 +154,7 @@ const Products = () => {
             {beans.map((bean) => (
               <div className="bean" key={bean.coffeeid}>
                 {bean.coffeecover && (
-                  <div>
+                  <div className='imgcontainer'>
                   <img src={`http://localhost:8801/images/`+ bean.coffeecover } width="50" height="50" alt={bean.coffeename} />
 
                   </div>
