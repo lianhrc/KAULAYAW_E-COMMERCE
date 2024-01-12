@@ -9,14 +9,17 @@ import usericon from '../img/user.png';
 import Modal from 'react-modal';
 import { useSpring, animated } from 'react-spring';
 import CartSidebar from '../popups/CartSidebar'; // Update the path based on your project structure
+import { useCart } from '../../components/CartContext';
 
 
 
 const Products = () => {
+  const { addToCart } = useCart();
   const [beans, setBeans] = useState([]);
   const [cartItems, setCartItems] = useState([]); // new state for cart items
 
   const handleAddToCart = (bean) => {
+    addToCart(bean);
     setCartItems((prevCartItems) => [...prevCartItems, bean]);
     openCartModal();
   };

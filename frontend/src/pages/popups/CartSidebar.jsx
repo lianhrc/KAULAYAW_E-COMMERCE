@@ -2,8 +2,11 @@
 import React from 'react';
 import './CartSidebar.css';
 import { useSpring, animated } from 'react-spring';
+import { useCart } from '../../components/CartContext';
 
-const CartSidebar = ({ isOpen, handleClose, cartItems, handleRemoveItem }) => {
+
+const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
+  const { cartItems,removeFromCart  } = useCart();
   const f = new Intl.NumberFormat('en-us', {
     currency: 'PHP',
     style: 'currency',
@@ -40,9 +43,9 @@ const CartSidebar = ({ isOpen, handleClose, cartItems, handleRemoveItem }) => {
                       <td>1</td>
                       <td>{f.format(item.coffeeprice)}</td>
                       <td>
-                        <button onClick={() => handleRemoveItem(item.coffeeid)}>
-                          Remove
-                        </button>
+                      <button onClick={() => removeFromCart(item.coffeeid)}>
+                      Remove
+                    </button>
                       </td>
                     </tr>
                   ))

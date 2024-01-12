@@ -8,15 +8,17 @@ import { useSpring, animated } from 'react-spring';
 import CartSidebar from '../popups/CartSidebar'; // Update the path based on your project structure
 import { useNavigate, Link } from 'react-router-dom'
 import kaulayawvid from "../video/kaulayaw_vid_ads.mp4"
+import { useCart } from '../../components/CartContext';
 
 
 
 
 const Home = () =>{
-
+  const { addToCart } = useCart();
   const [cartItems, setCartItems] = useState([]); // new state for cart items
 
   const handleAddToCart = (bean) => {
+    addToCart(bean);
     setCartItems((prevCartItems) => [...prevCartItems, bean]);
     openCartModal();
   };
