@@ -7,7 +7,7 @@ import CartSidebar from '../pages/popups/CartSidebar'; // Update the path based 
 import axios from 'axios'
 import Modal from 'react-modal';
 import { useSpring, animated } from 'react-spring';
-
+import { useCart } from '../../components/CartContext';
 
 
 const Navbar= () => {
@@ -86,14 +86,13 @@ const [cartItems, setCartItems] = useState([]); // new state for cart items
   };
 
 
- // In your Home or Products component
- const handleRemoveCartItem = (coffeeId) => {
-    // Implement logic to remove the item with the given coffeeId from the cart
-    // You can use setCartItems to update the cart state
-    const updatedCartItems = cartItems.filter(item => item.coffeeid !== coffeeId);
-    setCartItems(updatedCartItems);
-  };
-
+// In your Home or Products component
+const handleRemoveCartItem = (coffeeId) => {
+  // Implement logic to remove the item with the given coffeeId from the cart
+  // You can use setCartItems to update the cart state
+  const updatedCartItems = cartItems.filter((item) => item.coffeeid !== coffeeId);
+  setCartItems(updatedCartItems);
+};
 
   return (
     <div>
@@ -104,7 +103,7 @@ const [cartItems, setCartItems] = useState([]); // new state for cart items
     <div className="centerheader">
       <nav>
           <ul>
-          <li><a href='/'>HOME</a></li>
+          <li><a href='/home'>HOME</a></li>
           <li><Link to="/products">PRODUCTS</Link></li>
           <li><a href='#section3'>ABOUT</a></li>
           <li><a href='#section4'>CONTACTS</a></li>

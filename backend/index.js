@@ -4,6 +4,7 @@ import cors from "cors";
 import path from 'path'
 import multer from 'multer';
 
+
 const app = express();
 
 const db = mysql.createConnection({

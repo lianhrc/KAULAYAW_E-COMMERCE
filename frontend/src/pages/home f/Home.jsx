@@ -14,6 +14,7 @@ import { useCart } from '../../components/CartContext';
 
 
 const Home = () =>{
+  
   const { addToCart } = useCart();
   const [cartItems, setCartItems] = useState([]); // new state for cart items
 
