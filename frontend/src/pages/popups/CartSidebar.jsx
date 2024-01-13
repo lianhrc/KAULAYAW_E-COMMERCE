@@ -20,6 +20,7 @@ const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
   const overlayAnimation = useSpring({
     opacity: isOpen ? 0.5 : 0,
   });
+  
 
   const handleIncreaseQuantity = (itemId) => {
     updateCartItemQuantity(itemId, 1); // Increase quantity by 1

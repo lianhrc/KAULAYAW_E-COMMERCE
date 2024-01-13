@@ -185,7 +185,7 @@
 
 .section1contentcontainer table tbody tr:hover {
   cursor: pointer;
-  opacity: 0.5;
+  background-color: #b7aba0;
 }
 
 .actionstd {

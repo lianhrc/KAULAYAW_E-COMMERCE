@@ -54,14 +54,13 @@ export const CartProvider = ({ children }) => {
               quantity: Math.max(1, item.quantity + quantityChange),
               totalPrice: Math.max(
                 item.coffeeprice,
-                item.totalPrice + quantityChange * item.coffeeprice
+                (item.quantity + quantityChange) * item.coffeeprice
               ),
             }
           : item
       )
     );
   };
-
   return (
     <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateCartItemQuantity }}>
       {children}
