@@ -3,6 +3,7 @@ import mysql from "mysql";
 import cors from "cors";
 import path from 'path'
 import multer from 'multer';
+import bodyParser from "body-parser";
 
 
 const app = express();
@@ -16,6 +17,7 @@ const db = mysql.createConnection({
 
 app.use(express.json());
 app.use(cors());
+app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
@@ -44,6 +46,22 @@ app.get("/beans", (req, res) => {
         return res.json(data);
     });
 });
+
+// Route to get admin users
+app.get('/admin_users', (req, res) => {
+    // Replace 'admin_users' with your actual table name
+    const sql = 'SELECT * FROM admin_users';
+  
+    connection.query(sql, (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+      } else {
+        res.json(results);
+      }
+    });
+  });
+
 
 app.post("/beans", adminupload.single('coffeecover'), (req, res) => {
     console.log('Request Body:', req.body);

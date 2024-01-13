@@ -14,6 +14,7 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem('cart', JSON.stringify(cartItems));
   }, [cartItems]);
 
+  
   const addToCart = (item) => {
     // Check if the item is already in the cart
     const existingItem = cartItems.find((cartItem) => cartItem.coffeeid === item.coffeeid);

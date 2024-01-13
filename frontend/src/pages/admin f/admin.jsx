@@ -1,3 +1,5 @@
+// Admin.jsx
+
 import React, { useEffect, useState } from 'react';
 import AdminSideSection from './AdminSideSection';
 import updateicon from '../img/updateicon.png';
@@ -6,18 +8,17 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Admin = () => {
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
   const [beans, setBeans] = useState([]);
   const [isAddModalOpen, setAddModalOpen] = useState(false);
   const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
-  const [isUpdateMode, setIsUpdateMode] = useState(false); // Add this line
+  const [isUpdateMode, setIsUpdateMode] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [inputs, setInputs] = useState({
     coffeename: '',
     coffeecover: '',
     coffeeprice: null,
   });
-
-
 
   const navigate = useNavigate();
 
@@ -54,7 +55,7 @@ const Admin = () => {
       coffeeprice: bean.coffeeprice,
     });
     setUpdateModalOpen(true);
-    setIsUpdateMode(true); // Add this line to set isUpdateMode to true
+    setIsUpdateMode(true);
   };
 
   const closeUpdateModal = () => {
@@ -65,7 +66,7 @@ const Admin = () => {
       coffeecover: '',
       coffeeprice: null,
     });
-    setIsUpdateMode(false); // Add this line to reset isUpdateMode
+    setIsUpdateMode(false);
   };
 
   const handleChange = (e) => {
@@ -75,70 +76,56 @@ const Admin = () => {
       setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     }
   };
-  
 
   const handleAddClick = async () => {
     try {
-      console.log('Handling Add Click');
       const formData = new FormData();
       formData.append('coffeename', inputs.coffeename);
       formData.append('coffeecover', inputs.coffeecover);
       formData.append('coffeeprice', inputs.coffeeprice);
-  
+
       await axios.post('http://localhost:8801/beans', formData);
-      console.log('Item added successfully!');
       navigate('/admin');
       closeAddModal();
     } catch (error) {
       console.error('Error adding item:', error);
     }
   };
-  
-  
 
   const handleUpdateClick = async () => {
     try {
-        const updatedItem = {
-            ...selectedItem,
-            coffeename: inputs.coffeename,
-            coffeeprice: inputs.coffeeprice,
-        };
+      const updatedItem = {
+        ...selectedItem,
+        coffeename: inputs.coffeename,
+        coffeeprice: inputs.coffeeprice,
+      };
 
-        // If a new image is selected, update it; otherwise, keep the existing one
-        if (inputs.coffeecover instanceof File) {
-            const formData = new FormData();
-            formData.append('coffeename', inputs.coffeename);
-            formData.append('coffeecover', inputs.coffeecover);
-            formData.append('coffeeprice', inputs.coffeeprice);
+      if (inputs.coffeecover instanceof File) {
+        const formData = new FormData();
+        formData.append('coffeename', inputs.coffeename);
+        formData.append('coffeecover', inputs.coffeecover);
+        formData.append('coffeeprice', inputs.coffeeprice);
 
-            await axios.put(`http://localhost:8801/beans/${selectedItem.coffeeid}`, formData);
-        } else {
-            await axios.put(`http://localhost:8801/beans/${selectedItem.coffeeid}`, updatedItem);
-        }
+        await axios.put(`http://localhost:8801/beans/${selectedItem.coffeeid}`, formData);
+      } else {
+        await axios.put(`http://localhost:8801/beans/${selectedItem.coffeeid}`, updatedItem);
+      }
 
-        console.log('Item updated successfully!');
+      setBeans((prevBeans) =>
+        prevBeans.map((bean) => (bean.coffeeid === selectedItem.coffeeid ? updatedItem : bean))
+      );
 
-        // Update the local state with the updated item
-        setBeans((prevBeans) =>
-            prevBeans.map((bean) => (bean.coffeeid === selectedItem.coffeeid ? updatedItem : bean))
-        );
-
-        // Close the modal after successful submission
-        closeUpdateModal();
-
-        // Reset the state
-        setSelectedItem(null);
-        setInputs({
-            coffeename: '',
-            coffeecover: '',
-            coffeeprice: null,
-        });
+      closeUpdateModal();
+      setSelectedItem(null);
+      setInputs({
+        coffeename: '',
+        coffeecover: '',
+        coffeeprice: null,
+      });
     } catch (error) {
-        console.error('Error updating item:', error);
+      console.error('Error updating item:', error);
     }
-};
-
-  
+  };
 
   const handleclickDelete = async (id) => {
     try {
@@ -146,11 +133,13 @@ const Admin = () => {
       const updatedBeans = beans.filter((bean) => bean.coffeeid !== id);
       setBeans(updatedBeans);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
-  
+  if (!isAdminLoggedIn) {
+    return <AdminLogin setIsAdminLoggedIn={setIsAdminLoggedIn} />;
+  }
 
   return (
     <div className='AdminPage'>
@@ -176,7 +165,7 @@ const Admin = () => {
                     <td>{f.format(bean.coffeeprice)}</td>
                     <td>
                       <img src alt={`image of ${bean.coffeename}`} />
-                     </td>
+                    </td>
 
                     <td className='actionstd'>
                       <button className='update' onClick={() => openUpdateModal(bean)}>
@@ -189,35 +178,36 @@ const Admin = () => {
                               &times;
                             </span>
                             <form onSubmit={(e) => e.preventDefault()}>
-                                <h2>Update Item</h2>
-                                <input
-                                  className="addinputfield"
-                                  type="text"
-                                  placeholder="beans name"
-                                  value={inputs.coffeename}
-                                  onChange={handleChange}
-                                  name="coffeename"
-                                />
-                                <input
-                                  className="addinputfield"
-                                  type="number"
-                                  placeholder="beans price"
-                                  value={inputs.coffeeprice}
-                                  onChange={handleChange}
-                                  name="coffeeprice"
-                                />
-                                <input
-                                  className='addinputfield'
-                                  type='file'
-                                  placeholder='beans photo'
-                                  onChange={(e) => setInputs((prev) => ({ ...prev, coffeecover: e.target.files[0] }))}
-                                  name='coffeecover'
-                                />
-                                  <button className="subbtn" onClick={handleUpdateClick} type="submit">
-                                  Submit
-                                </button>
-                              </form>
-
+                              <h2>Update Item</h2>
+                              <input
+                                className="addinputfield"
+                                type="text"
+                                placeholder="beans name"
+                                value={inputs.coffeename}
+                                onChange={handleChange}
+                                name="coffeename"
+                              />
+                              <input
+                                className="addinputfield"
+                                type="number"
+                                placeholder="beans price"
+                                value={inputs.coffeeprice}
+                                onChange={handleChange}
+                                name="coffeeprice"
+                              />
+                              <input
+                                className='addinputfield'
+                                type='file'
+                                placeholder='beans photo'
+                                onChange={(e) =>
+                                  setInputs((prev) => ({ ...prev, coffeecover: e.target.files[0] }))
+                                }
+                                name='coffeecover'
+                              />
+                              <button className="subbtn" onClick={handleUpdateClick} type="submit">
+                                Submit
+                              </button>
+                            </form>
                           </div>
                         </div>
                       )}
@@ -233,7 +223,6 @@ const Admin = () => {
           <button onClick={openAddModal} className='Additembtn'>
             Add Item
           </button>
-          {/* Add Item Modal */}
           {isAddModalOpen && (
             <div className='modal-overlay'>
               <div className='modal-content'>
@@ -241,7 +230,6 @@ const Admin = () => {
                   &times;
                 </span>
                 <form onSubmit={handleAddClick} encType="multipart/form-data">
-
                   <h2>Add Item</h2>
                   <input
                     className='addinputfield'
@@ -261,7 +249,9 @@ const Admin = () => {
                     className='addinputfield'
                     type='file'
                     placeholder='beans photo'
-                    onChange={(e) => setInputs((prev) => ({ ...prev, coffeecover: e.target.files[0] }))}
+                    onChange={(e) =>
+                      setInputs((prev) => ({ ...prev, coffeecover: e.target.files[0] }))
+                    }
                     name='coffeecover'
                   />
                   <button className='subbtn' type='submit'>
@@ -274,10 +264,67 @@ const Admin = () => {
         </div>
 
         <div id='adminsection2'>
-          <div className='section2contentcontainer'>
-          </div>
+          <div className='section2contentcontainer'></div>
         </div>
-    
+      </div>
+    </div>
+  );
+};
+
+const AdminLogin = ({ setIsAdminLoggedIn }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    try {
+      await handleAdminLogin({ username, password });
+      setIsAdminLoggedIn(true);
+    } catch (error) {
+      console.error('Error logging in:', error);
+    }
+  };
+  const handleAdminLogin = async (credentials) => {
+    // Perform authentication logic here
+    // For example, you might make a request to your server to verify the credentials
+    try {
+      // Replace the following line with your actual authentication logic
+      const response = await axios.post('http://localhost:8801/admin_users', credentials);
+
+      // Check if the authentication was successful
+      if (response.data.success) {
+        // Authentication successful, set isAdminLoggedIn to true
+        setIsAdminLoggedIn(true);
+      } else {
+        // Authentication failed, handle accordingly (e.g., show an error message)
+        console.error('Authentication failed:', response.data.message);
+      }
+    } catch (error) {
+      // Handle any errors that occurred during the authentication process
+      console.error('Error during authentication:', error);
+    }
+  };
+
+  return (
+    <div className='adminloginpage'>
+      <div className="adminlogincontainer">
+        
+        <div className="adminloginimgcontainer">
+
+        </div>
+        
+        <input
+          type='text'
+          placeholder='Username'
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type='password'
+          placeholder='Password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button onClick={handleLogin}>Login</button>
       </div>
     </div>
   );
