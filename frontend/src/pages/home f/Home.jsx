@@ -9,12 +9,15 @@ import CartSidebar from '../popups/CartSidebar'; // Update the path based on you
 import { useNavigate, Link } from 'react-router-dom'
 import kaulayawvid from "../video/kaulayaw_vid_ads.mp4"
 import { useCart } from '../../components/CartContext';
+import LoginModal from '../../components/LoginModal';
+
 
 
 
 
 const Home = () =>{
-  
+
+
   const { addToCart } = useCart();
   const [cartItems, setCartItems] = useState([]); // new state for cart items
 
@@ -98,6 +101,12 @@ const Home = () =>{
     const updatedCartItems = cartItems.filter(item => item.coffeeid !== coffeeId);
     setCartItems(updatedCartItems);
   };
+
+  const [isSignup, setIsSignup] = useState(false);
+
+  const handleSwitchForm = () => {
+    setIsSignup((prevIsSignup) => !prevIsSignup);
+  };
   
   return (
     <div className='HomePage'>
@@ -122,45 +131,8 @@ const Home = () =>{
 
                   <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} cartItems={cartItems} handleRemoveItem={handleRemoveCartItem} />
                   <button onClick={openModal}><img className='logo-icon' src={usericon} alt="Your Description" /></button>
-                  <Modal
-                    isOpen={modalIsOpen}
-                    onRequestClose={closeModal}
-                    contentLabel="Login Modal"
-                    style={{
-                      overlay: {
-                        background: 'rgba(0, 0, 0, 0.5)',
-                      },
-                      content: {
-                        border: 'none',
-                        borderRadius: '2em ',
-                        padding: '0',
-                        maxWidth: '500px',
-                        margin: 'auto',
-                        background: '#F8EBE2',
-                      },
-                    }}
-                  >
-                        <div className="modalimgcontainer">
-                            <img className='logo-icon-modal' src={iconlogo} alt="Your Description" />
-                        </div>
-                    <animated.div style={animation}>
-                        
-                        <div className="inputfieldcontainer">
-                            <div className="usernamecontainer">
-                                <div className="iconinput"></div>
-                                <input type="text"  placeholder='username'/>
-                            </div>
-                            <div className="passwordcontainer">
-                              <div className="iconinput2"></div>
-                              <input type="password" placeholder='password'/>
-                            </div>
-                          </div>
-                        <div className="buttonmodal">
-                            <button className='signupbtn' onClick={handleRegister}>Sign up</button>
-                            <button className='loginbtn'onClick={handleLogin}>Log in</button>
-                        </div>
-                    </animated.div>
-                  </Modal>
+                  <LoginModal isOpen={modalIsOpen} closeModal={closeModal} handleLogin={handleLogin} handleRegister={handleRegister} />
+                  
                     
               </div>
             </div>

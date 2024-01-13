@@ -11,6 +11,7 @@ import "../src/pages/home f/Home.css"
 import "../src/pages/admin f/Admin.css"
 import "../src/pages/products f/Products.css"
 import "../src/pages/popups/CartSidebar.css"
+import "../src/components/LoginModal.css"
 import "../src/components/navbar.css"
 import { CartProvider } from './components/CartContext.jsx';
 import "./App.css"
