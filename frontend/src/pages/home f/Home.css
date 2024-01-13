@@ -35,7 +35,7 @@
 .leftintrosection{
   flex: 40%;
   height: 80%;
-  padding: 5em 2em 2em 2em;
+  padding: 7em 2em 2em 2em;
 }
 .left-one{
     height: 4em;
@@ -51,18 +51,20 @@
 }
 
 .left-three{    
-    font-size: 1em;
+    font-size: 12px;
     color: black;
     height: 10em;
-    padding-top: 2em;
-    line-height: 2em;
-        text-align: left;
+    padding-top: 3em;
+    line-height: 3em;
 }
+
 
 .left-four{    
     display: flex;
     align-items: center;
     justify-content: left;
+    padding-top: 4em;
+    text-align: center;
 }   
 
 
@@ -82,7 +84,7 @@
 
 .rightintrosection{
     flex: 50%;
-    margin-top: 3em;
+    margin-top: 6em;
     height: 60%;
     padding: 0.3em;
     border-radius: 10px;
@@ -267,7 +269,7 @@
 }
 
 .section3leftcontainer{
-    flex: 60%;
+    flex: 50%;
     height: 80vh;
     position: relative;
     display: flex;
@@ -511,17 +513,21 @@
     display: flex;
     padding-top: 3em;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     margin: auto;
+    align-items: center;
     justify-content: center;
     row-gap: 2rem;
+    background-color: #F8EBE2;
 }
 
 .usernamecontainer,
 .passwordcontainer{
     display: flex;
+    width: 50%;
     flex-direction: row;
-    background-color: #DC5341;
+    background-color: transparent;
+
 }
 .usernamecontainer  input,
 .passwordcontainer input{
@@ -533,7 +539,6 @@
 
 .iconinput{
     width: 2rem;
-
     height: 2rem;
     background-image: url(../img/userlogin.png);
     background-size: contain;
@@ -553,24 +558,29 @@
 .buttonmodal{
     display: flex;
     flex-direction: row;
-    width: 30%;
+    width: 100%;
     height: 2em;
     margin: auto;
     column-gap: 1rem;
-    justify-content: s;
-    
+    justify-content: center;
+    background-color: #F8EBE2;
 }
 
 .signupbtn{
   border: none;
   color: gray;
   cursor: pointer;
+  width: 20%;
+  background-color: #F8EBE2;
+
 }
 
 .loginbtn{
     border: none;
     color: #F8EBE2;
     cursor: pointer;
+    width: 20%;
+    
     background-color: #DC5341;
 }
 

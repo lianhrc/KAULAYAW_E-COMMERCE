@@ -141,7 +141,7 @@ const Home = () =>{
                     }}
                   >
                         <div className="modalimgcontainer">
-                            <mg className='logo-icon-modal' src={iconlogo} alt="Your Description" />
+                            <img className='logo-icon-modal' src={iconlogo} alt="Your Description" />
                         </div>
                     <animated.div style={animation}>
                         
