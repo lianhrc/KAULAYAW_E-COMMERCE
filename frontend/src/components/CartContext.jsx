@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
   const addToCart = (item) => {
     // Check if the item is already in the cart
     const existingItem = cartItems.find((cartItem) => cartItem.coffeeid === item.coffeeid);
-
+  
     if (existingItem) {
       // If the item exists, update its quantity and total price
       setCartItems((prevCartItems) =>
@@ -27,7 +27,7 @@ export const CartProvider = ({ children }) => {
             ? {
                 ...cartItem,
                 quantity: cartItem.quantity + 1,
-                totalPrice: cartItem.totalPrice + item.coffeeprice,
+                totalPrice: (cartItem.quantity + 1) * cartItem.coffeeprice,
               }
             : cartItem
         )
@@ -40,6 +40,8 @@ export const CartProvider = ({ children }) => {
       ]);
     }
   };
+  
+  
 
   const removeFromCart = (itemId) => {
     const updatedCartItems = cartItems.filter((item) => item.coffeeid !== itemId);
