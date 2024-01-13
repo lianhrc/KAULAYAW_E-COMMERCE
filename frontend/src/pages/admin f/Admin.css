@@ -1,186 +1,199 @@
-
-.AdminPageContainer{
-    max-width: 77%;
-    height: 100vh;
-    margin: auto;
-    position: relative;
-    justify-content: center;
-    display: block;
-    flex-direction: column;
-    padding-left: 17rem;
-    overflow-y: hidden;
-}
-/* External CSS file */
-
-  .AdminPage {
-    display: flex;
-  }
-  
-  .admin-side-section {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 20%; /* Adjust the width as needed */
-    background-color: #fff; /* Set your desired background color */
-    z-index: 1002; /* Ensure the sidebar is above other elements */
-   
-  }
-
-.adminlogo{
-    background-color: #fff; /* Set your desired background color */
-
-}
-  
-  .admin-side-section nav {
-   width: auto;
-    background: none;    
-  }
-  
-  .admin-side-section ul {
-    flex-direction: column;
-    list-style: none;
-    text-align: center;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    row-gap: 1rem;
+.AdminPageContainer {
+  max-width: 77%;
+  height: 100vh;
+  margin: auto;
+  position: relative;
+  justify-content: center;
+  display: block;
+  flex-direction: column;
+  padding-left: 17rem;
+  overflow-y: hidden;
 }
 
+.AdminPage {
+  display: flex;
+}
+
+.admin-side-section {
+  background-color: #E7E1D5;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  padding-top: 2rem;
+  left: 0;
+  height: 100vh;
+  width: 20%;
+  z-index: 1002;
+}
+
+.imgcontainerside {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: transparent;
+}
+
+.adminlogo {
+  background-color: transparent;
+  width: 80%;
+}
+
+.admin-side-section nav {
+  width: auto;
+  background: none;
+}
+
+.admin-side-section ul {
+  flex-direction: column;
+  list-style: none;
+  text-align: center;
+  width: 100%;
+  background-color: #E7E1D5;
+  display: flex;
+  row-gap: 1rem;
+}
+.admin-side-section li:hover{
+  background-color: #b7aba0;
+  color: white;
+}
 .admin-side-section li {
-    width: 100%;
-    height: 3rem;
-    display: flex;
-    background-color: transparent;
-    align-items: center;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  background: none;
+
+  align-items: center;
 }
 
-.admin-side-section li:hover {
-    background-color: #DC5341;
-}
-  
-  .admin-side-section a {
-    text-decoration: none;
-    color: black;
 
-    background-color: transparent;
 
+.admin-side-section a {
+  text-decoration: none;
+  color: black;
+  background: none;
 }
 
 .admin-side-section a:hover{
-    color: black;
+  color: black;
 }
 
 
-  
-  #adminsection1{
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    padding-top: 4rem;
-    display: flex;
-    justify-content: center;
-  }
+.sidecontent {
+  margin-top: 5rem;
+}
 
-  #adminsection2{
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    padding-top: 6rem;
-    display: flex;
-    justify-content: center;
-  }
+.admin-side-section .sidecontent img {
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 1rem;
+  background-color: transparent;
+}
 
-  
-  #adminsection3{
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    padding-top: 6rem;
-    display: flex;
-    justify-content: center;
-  }
-
-  #adminsection4{
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    padding-top: 6rem;
-    display: flex;
-    justify-content: center;
-  }
-
-  .section1contentcontainer,
-  .section2contentcontainer,
-  .section3contentcontainer,
-  .section4contentcontainer{
-    width: 95%;
-    display: flex;
-    height: 69%;
-    padding-top: 1rem;
-    position: absolute;
-  }
-
-  .section1contentcontainer{
-    overflow: auto;
-  }
-  /* Add some basic styling to the table */
-.section1contentcontainer table {
-  border-collapse: collapse;
+#adminsection1 {
+  height: 100vh;
   width: 100%;
-
-}
-
-.section1contentcontainer table thead tr{
-  position: fixed;
-  width: 72%;padding-top: 2rem;
-  top: 0;
-}
-
-.section1contentcontainer table thead tr, .section1contentcontainer table tbody tr{
+  position: relative;
+  padding-top: 6rem;
   display: flex;
   justify-content: center;
-  
+}
 
+#adminsection2 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  padding-top: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.section1contentcontainer,
+.section2contentcontainer {
+  width: 95%;
+  display: flex;
+  height: 70%;
+  position: absolute;
+}
+
+.section1contentcontainer {
+  margin-top: -2rem;
+  border-radius: 30px;
+  position: relative;
+  background-color: #E7E1D5;
+  box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.10);
+}
+
+.section1contentcontainer table {
+  border-collapse: collapse;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.section1contentcontainer table thead tr {
+  position: sticky;
+  width: 100%;
+}
+
+.section1contentcontainer table tbody {
+  position: absolute;
+  overflow-y: auto;
+  background: none;
+  max-height: calc(83vh - 10rem);
+}
+
+.section1contentcontainer table thead tr,
+.section1contentcontainer table tbody tr {
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
 }
 
 .section1contentcontainer table thead tr th {
-  font-size: 12px;
+  font-size: 14px;
   border-collapse: collapse;
-  height: 2rem;
-  padding: 8px;
+  height: 3rem;
+  font-weight: 500;
   display: flex;
+  background-color: transparent;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  border-bottom: 1px #DC5341 solid;
+  border-bottom: 1px #32281E solid;
 }
 
-
-.section1contentcontainer table tbody tr td{
-  font-size: 12px;
+.section1contentcontainer table tbody tr td {
+  font-size: 13px;
+  font-weight: 400;
   border-collapse: collapse;
   height: 2rem;
   padding: 1rem;
   display: flex;
+  background-color: transparent;
   align-items: center;
   justify-content: center;
   width: 100%;
-
 }
 
-.section1contentcontainer table tbody tr:hover{
-  background-color: #DC5341;
+.section1contentcontainer table tbody tr td img{
+  background-color: transparent;
 }
 
+.section1contentcontainer table tbody tr:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
 
-
-.actionstd{
+.actionstd {
   display: flex;
   flex-direction: row;
 }
 
 .section1contentcontainer table tbody tr td button.update,
-.section1contentcontainer table tbody tr td button.delete{
+.section1contentcontainer table tbody tr td button.delete {
   background-color: transparent;
   border: none;
   width: 30%;
@@ -188,38 +201,42 @@
 }
 
 .section1contentcontainer table tbody tr td button.update:hover,
-.section1contentcontainer table tbody tr td button.delete:hover{
- opacity: 0.5;
- cursor: pointer;
+.section1contentcontainer table tbody tr td button.delete:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
-
-.section1contentcontainer table tbody tr td button img{
+.section1contentcontainer table tbody tr td button img {
   width: 30px;
   background-color: transparent;
 }
 
-.Additembtn{
+.Additembtn {
   position: absolute;
   width: 10%;
   padding: 10px;
   display: flex;
   justify-content: center;
-  bottom: 5rem;
-  color: #DC5341;
-  border: 1px solid #DC5341;
+  bottom: 11rem;
+  left: 3rem;
+  color: #32281E;
+  border: 1px solid #32281E;
   cursor: pointer;
 }
 
-.Additembtn:hover{
+.Additembtn:hover {
   background-color: #DC5341;
   color: white;
   transition: 0.3s;
 }
 
+.section2contentcontainer {
+  margin-top: -2rem;
+  border-radius: 1rem;
+  box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.10);
+  background-color: #E7E1D5;
+}
 
-
-/* Add this to your CSS file or style tag */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -247,7 +264,7 @@
 .close-button {
   position: absolute;
   top: -12px;
-  right:-10px;
+  right: -10px;
   font-size: 20px;
   cursor: pointer;
   width: 25px;
@@ -255,10 +272,10 @@
   color: #DC5341;
   justify-content: center;
   border-radius: 50%;
-  box-shadow: 1px 5px 5px 5px rgba(0,0,0,0.10);
+  box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.10);
 }
 
-.addinputfield{
+.addinputfield {
   height: 2rem;
   margin: 1rem 0;
   width: 10rem;
@@ -266,28 +283,19 @@
   border: 1px gray solid;
 }
 
-.addinputfield::placeholder{
+.addinputfield::placeholder {
   color: gray;
   opacity: 0.5;
 }
 
-.subbtn{
+.subbtn {
   display: flex;
   justify-content: center;
   margin: auto;
   width: 30%;
   padding: 10px;
-  background-color:#DC5341 ;
+  background-color: #DC5341;
   color: white;
   border: 1px #DC5341 solid;
-  cursor: pointer;
+ 
 }
-
-
-.subbtn:hover{
-  color: #DC5341;
-  background-color: white;
-
-}
-
-

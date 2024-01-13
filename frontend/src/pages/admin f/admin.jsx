@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import AdminSideSection from './AdminSideSection';
 import updateicon from '../img/updateicon.png';
 import deleteicon from '../img/deleteicon.png';
-import Modal from 'react-modal';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -275,14 +274,10 @@ const Admin = () => {
         </div>
 
         <div id='adminsection2'>
-          <div className='section2contentcontainer'></div>
+          <div className='section2contentcontainer'>
+          </div>
         </div>
-        <div id='adminsection3'>
-          <div className='section3contentcontainer'></div>
-        </div>
-        <div id='adminsection4'>
-          <div className='section4contentcontainer'></div>
-        </div>
+    
       </div>
     </div>
   );
