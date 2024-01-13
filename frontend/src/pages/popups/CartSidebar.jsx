@@ -57,7 +57,7 @@ const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
                         {item.quantity} {/* Display the quantity */}
                       <button className='addquanbtn' onClick={() => updateCartItemQuantity(item.coffeeid, 1)}>+</button>
                       </td>
-                      <td>{f.format(item.totalPrice )}</td>
+                      <td>{f.format(item.totalPrice)}</td>
                       <td>
                       <button onClick={() => removeFromCart(item.coffeeid)}>
                       <img className='trashicon' src={trashicon} alt="delete" />

@@ -22,6 +22,14 @@ const Admin = () => {
 
   const navigate = useNavigate();
 
+   const handleLogout = () => {
+    // Implement the logout logic
+    // For example, clear any authentication tokens, reset state, etc.
+    setIsAdminLoggedIn(false);
+    navigate('/admin'); // Redirect to the login page
+  };
+
+
   useEffect(() => {
     const fetchAllBeans = async () => {
       try {
@@ -83,14 +91,21 @@ const Admin = () => {
       formData.append('coffeename', inputs.coffeename);
       formData.append('coffeecover', inputs.coffeecover);
       formData.append('coffeeprice', inputs.coffeeprice);
-
-      await axios.post('http://localhost:8801/beans', formData);
-      navigate('/admin');
+  
+      const response = await axios.post('http://localhost:8801/beans', formData);
+      console.log('API response after adding:', response.data);
+  
+      // Fetch the updated list of products after adding a new one
+      const res = await axios.get('http://localhost:8801/beans');
+      setBeans(res.data);
+  
       closeAddModal();
     } catch (error) {
       console.error('Error adding item:', error);
     }
   };
+  
+  
 
   const handleUpdateClick = async () => {
     try {
@@ -143,7 +158,7 @@ const Admin = () => {
 
   return (
     <div className='AdminPage'>
-      <AdminSideSection />
+      <AdminSideSection onLogout={handleLogout} />
       <div className='AdminPageContainer'>
         <div id='adminsection1'>
           <div className='section1contentcontainer'>
@@ -229,7 +244,10 @@ const Admin = () => {
                 <span className='close-button' onClick={closeAddModal}>
                   &times;
                 </span>
-                <form onSubmit={handleAddClick} encType="multipart/form-data">
+                <form onSubmit={(e) => {
+                  handleAddClick();   // Call your custom form submission logic
+                  e.preventDefault(); // Prevent default form submission behavior
+                  }} encType="multipart/form-data">
                   <h2>Add Item</h2>
                   <input
                     className='addinputfield'
@@ -302,6 +320,7 @@ const AdminLogin = ({ setIsAdminLoggedIn }) => {
       // Handle any errors that occurred during the authentication process
       console.error('Error during authentication:', error);
     }
+    
   };
 
   return (

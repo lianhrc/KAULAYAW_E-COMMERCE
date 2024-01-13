@@ -6,7 +6,9 @@ import logout from '../img/logouticon.png'
 
 
 
-const AdminSideSection = () => {
+const AdminSideSection = ({ onLogout }) => {
+
+  console.log('Rendering AdminSideSection');
   return (
     <aside className="admin-side-section">
         <div className="imgcontainerside">
@@ -18,11 +20,11 @@ const AdminSideSection = () => {
         <ul>
           <li><a href="#adminsection1"><img src={productsicon} alt="" />Products </a></li>
           <li><a href="#adminsection2"><img src={usersicon} alt="" />Users</a></li>
-          <li><a href="#adminsection3"><img src={logout} alt="" />Logout</a></li>
+          <button className='logoutbtn' onClick={onLogout}> <img src={logout} alt="" />Logout</button>
         </ul>
       </nav>
       </div>
-    </aside>
+    </aside> 
   );
 };
 

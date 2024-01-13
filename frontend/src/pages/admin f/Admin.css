@@ -371,3 +371,15 @@
   height: 50%;
   background-image: url(../img/icon-logo.png);
 }
+
+.logoutbtn{
+  background-color: transparent;
+  border: none;
+  height: 3rem;
+
+}
+.logoutbtn:hover{
+  color: red;
+  background-color: #b7aba0;
+  cursor: pointer;
+}

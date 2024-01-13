@@ -103,6 +103,8 @@ const Home = () =>{
   const handleSwitchForm = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);
   };
+
+  
   
   return (
     <div className='HomePage'>
@@ -128,8 +130,7 @@ const Home = () =>{
                   <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} cartItems={cartItems} handleRemoveItem={handleRemoveCartItem} />
                   <button onClick={openModal}><img className='logo-icon' src={usericon} alt="Your Description" /></button>
                   <LoginModal isOpen={modalIsOpen} closeModal={closeModal} handleLogin={handleLogin} handleRegister={handleRegister} />
-                  
-                    
+                     
               </div>
             </div>
             <div className="introsection">
