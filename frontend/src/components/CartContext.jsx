@@ -61,7 +61,7 @@ export const CartProvider = ({ children }) => {
               ),
             }
           : item
-      )
+      ) 
     );
   };
   return (
