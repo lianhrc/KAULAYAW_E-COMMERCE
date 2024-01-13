@@ -10,7 +10,7 @@ import Modal from 'react-modal';
 import { useSpring, animated } from 'react-spring';
 import CartSidebar from '../popups/CartSidebar'; // Update the path based on your project structure
 import { useCart } from '../../components/CartContext';
-
+import LoginModal from '../../components/LoginModal';
 
 
 const Products = () => {
@@ -120,45 +120,8 @@ const handleRemoveCartItem = (coffeeId) => {
 
           <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} cartItems={cartItems} handleRemoveItem={handleRemoveCartItem} />
           <button onClick={openModal}><img className='logo-icon' src={usericon} alt="Your Description" /></button>
-          <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            contentLabel="Login Modal"
-            style={{
-              overlay: {
-                background: 'rgba(0, 0, 0, 0.5)',
-              },
-              content: {
-                border: 'none',
-                borderRadius: '2em ',
-                padding: '0',
-                maxWidth: '500px',
-                margin: 'auto',
-                background: '#F8EBE2',
-              },
-            }}
-          >
-                <div className="modalimgcontainer">
-                    <mg className='logo-icon-modal' src={iconlogo} alt="Your Description" />
-                </div>
-            <animated.div style={animation}>
-                
-                <div className="inputfieldcontainer">
-                    <div className="usernamecontainer">
-                        <div className="iconinput"></div>
-                        <input type="text"  placeholder='username'/>
-                    </div>
-                    <div className="passwordcontainer">
-                      <div className="iconinput2"></div>
-                      <input type="password" placeholder='password'/>
-                    </div>
-                  </div>
-                <div className="buttonmodal">
-                    <button className='signupbtn' onClick={handleRegister}>Sign up</button>
-                    <button className='loginbtn'onClick={handleLogin}>Log in</button>
-                </div>
-            </animated.div>
-          </Modal>
+          <LoginModal isOpen={modalIsOpen} closeModal={closeModal} handleLogin={handleLogin} handleRegister={handleRegister} />
+          
             
       </div>
     </div>  

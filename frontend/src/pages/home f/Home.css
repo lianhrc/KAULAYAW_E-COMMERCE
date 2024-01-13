@@ -44,8 +44,15 @@
     text-align: left;
 }
 
+.left-one h1, .left-two h1{
+    font-weight: 500;
+    background-color: transparent;
+}
+
 .left-two{
     font-size: 1.2em;
+    background-color: transparent;
+
     color: #32281E;
     padding-left: 10rem;
 }
@@ -112,7 +119,7 @@
    font-size: 2em;
    color: #32281E;
    margin-bottom: 2rem;
-
+   font-weight: 500;
 }
 
 .headersection2 p{
@@ -304,6 +311,7 @@
     background-color: transparent;
     margin-top: 0.5em;
     color: #32281E;
+    font-weight: 500;
     margin-bottom: 2rem;
 }
 
@@ -710,8 +718,5 @@
     cursor: pointer;
 
 }
-
-
-
 
 

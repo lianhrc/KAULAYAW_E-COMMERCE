@@ -5,14 +5,12 @@ import carticon from '../pages/img/shopping-bag.png';
 import usericon from '../pages/img/user.png';
 import CartSidebar from '../pages/popups/CartSidebar'; // Update the path based on your project structure
 import axios from 'axios'
-import Modal from 'react-modal';
-import { useSpring, animated } from 'react-spring';
+import { useSpring } from 'react-spring';
 import LoginModal from '../../components/LoginModal';
 
 
 
 const Navbar= () => {
-    
 
 const [beans, setBeans] = useState([]);
 const [cartItems, setCartItems] = useState([]); // new state for cart items
@@ -41,12 +39,6 @@ const [cartItems, setCartItems] = useState([]); // new state for cart items
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
 
-
-  // Use react-spring for animation
-  const animation = useSpring({
-    opacity: modalIsOpen ? 1 : 0,
-    transform: modalIsOpen ? 'scale(1)' : 'scale(0.8)',
-  });
 
   const openModal = () => {
     setModalIsOpen(true);

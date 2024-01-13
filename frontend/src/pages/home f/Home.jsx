@@ -4,7 +4,7 @@ import carticon from '../img/shopping-bag.png';
 import usericon from '../img/user.png';
 import Modal from 'react-modal';
 import { useState } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring } from 'react-spring';
 import CartSidebar from '../popups/CartSidebar'; // Update the path based on your project structure
 import { useNavigate, Link } from 'react-router-dom'
 import kaulayawvid from "../video/kaulayaw_vid_ads.mp4"
@@ -38,11 +38,7 @@ const Home = () =>{
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalExploreIsOpen, setmodalExploreIsOpen] = useState(false);
 
-  // Use react-spring for animation
-  const animation = useSpring({
-    opacity: modalIsOpen ? 1 : 0,
-    transform: modalIsOpen ? 'scale(1)' : 'scale(0.8)',
-  });
+
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -193,6 +189,7 @@ const Home = () =>{
                  <video
                  autoPlay
                  loop
+                 muted
                  style={
                   {
                     width:"100%",

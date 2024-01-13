@@ -89,7 +89,7 @@ const LoginModal = ({ isOpen, closeModal, handleLogin, handleRegister }) => {
           </button>
           <button className='signupbtn' onClick={isSignup ? handleRegister : handleLogin}>
             {isSignup ? 'Sign up' : 'Log in'}
-          </button>
+          </button>       
         </div>
       </animated.div>
     </Modal>
