@@ -106,6 +106,7 @@
   padding-top: 6rem;
   display: flex;
   justify-content: center;
+  
 }
 
 .section1contentcontainer,
@@ -121,7 +122,9 @@
   border-radius: 30px;
   position: relative;
   background-color: #E7E1D5;
-  box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.10);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
 }
 
 .section1contentcontainer table {
@@ -233,7 +236,9 @@
 .section2contentcontainer {
   margin-top: -2rem;
   border-radius: 1rem;
-  box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.10);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
   background-color: #E7E1D5;
 }
 

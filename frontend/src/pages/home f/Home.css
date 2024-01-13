@@ -108,7 +108,6 @@
 
 .headersection2 h1{
    font-size: 2em;
-   background-color: #E7E1D5;
    color: #32281E;
    margin-bottom: 2rem;
 
@@ -131,7 +130,13 @@
     justify-content: center;
     align-items: flex-start;
     align-content: space-evenly;
+    background-image: url(../img/section1-bg.jpg);
     column-gap: 2em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #1e1c1a;
 }
 
 .box{
@@ -323,38 +328,65 @@
 
 #section4{
     width: 100%;
-    height: 20%;
+    height: 15rem;
+    background-image: url(../img/section1-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #1e1c1a;
     display: flex;
+    position: relative;
+ 
 }
-.leftsection4{
-    flex: 20%;
-    background-color: #32281E;
-    display: flex;
-    padding-left: 2em;
-    justify-content: flex-start;
-    align-items: center;
-
-}
-.leftsection4 a{
-    
+.footersection{
     display: flex;
     justify-content: center;
-    width: 25%;
-    border-radius: 50%;
     align-items: center;
+    background-color: transparent;
+    width: 80%;
+    gap: 2rem;
+    flex-direction: column;
+    margin: auto;
 }
-.rightsection4{
-    background-color: #32281E;
 
-    flex: 50%;
+.divtop{
     display: flex;
-    justify-content: flex-end;
-    padding-right: 2em;
+    flex-direction: row;
+    background-color: transparent;
+    background: none;
+    justify-content: center;
     align-items: center;
-    padding-left: 2em;
-    column-gap: 1em;
+    text-align: center;
+    padding-top: 1rem;
+    width: 50%;
 
 }
+
+.divtop p{
+    background-color: transparent;
+    color: white;
+    text-align: center;
+
+    width: 30%;
+}
+
+
+ .footerlogo{
+    border-radius: 50%;
+    height: 100px;
+    text-align: center;
+    width: 100px;
+}
+
+.divbottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    gap: 1rem;
+}
+
 
 
 .foot1,
@@ -364,7 +396,7 @@
     height: 4em;
     width: 4em;
     border-radius: 50%;
-    background-color: lightcoral;
+    background-color: #32281E;
     padding: 1rem;
     border: none;
 }

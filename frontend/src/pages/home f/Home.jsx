@@ -324,14 +324,18 @@ const Home = () =>{
             </div>
           </div>
           <div id='section4'>
-              <div className="leftsection4">
-                <a href="#section1"><img className='logo-icon' src={iconlogo} alt="Your Description" /></a>
-              </div>
-              <div className="rightsection4">
+              <div className="footersection">
+                 <div className="divtop">
+                  <p>@2019 KAULAYAW COFFEE SHOP</p>
+                    <img className='footerlogo' src={iconlogo} alt="Your Description" />
+                    <p>Made by AliGraphy</p>
+                  </div>
+                  <div className="divbottom">
                   <button className='foot1'><div className="imgfoot1"></div></button>
                   <button className='foot2'><div className="imgfoot2"></div></button>
                   <button className='foot3'><div className="imgfoot3"></div></button>
                   <button className='foot4'><div className="imgfoot4"></div></button>
+                  </div>
               </div>
           </div>
       </div>
