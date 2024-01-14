@@ -7,7 +7,7 @@ import {
 import Home from "./pages/home f/Home"
 import Products from "./pages/products f/Products"
 import Admin from "./pages/admin f/admin"
-import AdminLogin from "../src/components/AdminLogin"
+import AdminLogin from "../src/components/AdminLogin.jsx"
 import "../src/pages/home f/Home.css"
 import "../src/pages/admin f/Admin.css"
 import "../src/pages/products f/Products.css"

@@ -64,7 +64,7 @@ const AdminLogin = ({ onLogin }) => {
           value={adminInput.passw}
           onChange={handleChange}
         />
-        <button onClick={handleLogin}>Login</button>
+        <button typeof='submit' onClick={handleLogin}>Login</button>
       </div>
     </div>
   );
