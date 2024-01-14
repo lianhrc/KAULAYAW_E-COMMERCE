@@ -12,9 +12,6 @@ import { useCart } from '../../components/CartContext';
 import LoginModal from '../../components/LoginModal';
 
 
-
-
-
 const Home = () =>{
 
 

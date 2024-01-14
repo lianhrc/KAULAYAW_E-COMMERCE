@@ -300,7 +300,15 @@
   background-color: #DC5341;
   color: white;
   border: 1px #DC5341 solid;
+  border-radius: 5px;
  
+}
+
+.subbtn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #DC5341;
+  transition: 0.3s;
 }
 
 .adminloginpage{

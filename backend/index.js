@@ -47,12 +47,14 @@ app.get("/beans", (req, res) => {
     });
 });
 
-// Route to get admin users
+
+
 app.get('/admin_users', (req, res) => {
     // Replace 'admin_users' with your actual table name
     const sql = 'SELECT * FROM admin_users';
   
-    connection.query(sql, (error, results) => {
+    // Use the correct variable 'db' instead of 'connection'
+    db.query(sql, (error, results) => {
       if (error) {
         console.error('Error executing MySQL query:', error);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -60,7 +62,29 @@ app.get('/admin_users', (req, res) => {
         res.json(results);
       }
     });
-  });
+});
+
+// In your Express app
+app.post("/admin_users", (req, res) => {
+    console.log("Received login request:", req.body);
+    const { admin_username, admin_password } = req.body;
+
+    // Check credentials against the admin table in your MySQL database
+    const sql = "SELECT * FROM admin_users WHERE username = ? AND password = ?";
+    db.query(sql, [admin_username, admin_password], (error, results) => {
+        if (error) {
+            console.error('Error executing MySQL query:', error);
+            res.status(500).json({ success: false, message: 'Internal Server Error' });
+        } else {
+            if (results.length > 0) {
+                res.json({ success: true, message: 'Authentication successful' });
+            } else {
+                res.json({ success: false, message: 'Invalid credentials' });
+            }
+        }
+    });
+});
+
 
 
 app.post("/beans", adminupload.single('coffeecover'), (req, res) => {
