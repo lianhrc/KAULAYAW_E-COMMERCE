@@ -92,11 +92,10 @@
         padding-bottom: 5rem;
         column-gap: 30px;
         row-gap: 50px;
-        background-color: transparent;
         justify-content: center;
         flex-wrap: wrap;
         width: 90%;
-        background-color: transparent;
+        background-color: #F1F0EE;
         background: none;
     }
     .bean{
@@ -110,9 +109,9 @@
         background-color: #E2D9C8;
         position: relative;
         background-color: transparent;
-        box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
-        -webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
     }
     
     .imgcontainer{

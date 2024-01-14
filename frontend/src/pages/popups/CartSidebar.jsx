@@ -1,12 +1,14 @@
-// CartSidebar.js
-import React from 'react';
+import React, { useState } from 'react';
 import './CartSidebar.css';
 import { useSpring, animated } from 'react-spring';
 import { useCart } from '../../components/CartContext';
 import trashicon from '../img/trash.png'
+import LoginModal from '../../components/LoginModal';
+
 
 
 const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
+  
   const { cartItems,removeFromCart, updateCartItemQuantity   } = useCart();
   const f = new Intl.NumberFormat('en-us', {
     currency: 'PHP',
@@ -22,12 +24,16 @@ const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
   });
   
 
-  const handleIncreaseQuantity = (itemId) => {
-    updateCartItemQuantity(itemId, 1); // Increase quantity by 1
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+
+  const openLoginModal = () => {
+    console.log('Opening login modal');
+    setIsLoginModalOpen(true);
   };
 
-  const handleDecreaseQuantity = (itemId) => {
-    updateCartItemQuantity(itemId, -1); // Decrease quantity by 1
+  const closeLoginModal = () => {
+    console.log('Closing login modal');
+    setIsLoginModalOpen(false);
   };
 
   return (
@@ -74,10 +80,14 @@ const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
             </table>
           </div>
           <div className="checkoutbtncontainer">
-            <button className='checkoutbtn'>Check Out</button>
+          <button className='checkoutbtn' onClick={() => { handleRemoveItem(); handleClose(); openLoginModal(); }}>Check Out</button>
           </div>
         </div>
       </animated.div>
+
+      {isLoginModalOpen && (
+        <LoginModal isOpen={isLoginModalOpen} closeModal={closeLoginModal} />
+      )}
     </>
   );
 };

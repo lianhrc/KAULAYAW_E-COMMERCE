@@ -8,7 +8,6 @@ const Admin = () => {
   const [beans, setBeans] = useState([]);
   const [isAddModalOpen, setAddModalOpen] = useState(false);
   const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
-  const [isUpdateMode, setIsUpdateMode] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [inputs, setInputs] = useState({
     coffeename: '',
@@ -52,7 +51,6 @@ const Admin = () => {
       coffeeprice: bean.coffeeprice,
     });
     setUpdateModalOpen(true);
-    setIsUpdateMode(true);
   };
 
   const closeUpdateModal = () => {
@@ -63,7 +61,6 @@ const Admin = () => {
       coffeecover: '',
       coffeeprice: null,
     });
-    setIsUpdateMode(false);
   };
 
   const handleChange = (e) => {

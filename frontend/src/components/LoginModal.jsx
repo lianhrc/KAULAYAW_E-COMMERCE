@@ -7,8 +7,6 @@ import iconlogo from '../pages/img/icon-logo.png';
 const LoginModal = ({ isOpen, closeModal, handleLogin, handleRegister }) => {
   const [isSignup, setIsSignup] = useState(false);
   const [beans, setBeans] = useState([]);
-  const [cartItems, setCartItems] = useState([]); // new state for cart items
-
   useEffect(() => {
     const fetchAllBeans = async () => {
       try {

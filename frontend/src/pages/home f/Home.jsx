@@ -4,25 +4,17 @@ import carticon from '../img/shopping-bag.png';
 import usericon from '../img/user.png';
 import Modal from 'react-modal';
 import { useState } from 'react';
-import { useSpring } from 'react-spring';
 import CartSidebar from '../popups/CartSidebar'; // Update the path based on your project structure
 import { useNavigate, Link } from 'react-router-dom'
 import kaulayawvid from "../video/kaulayaw_vid_ads.mp4"
-import { useCart } from '../../components/CartContext';
 import LoginModal from '../../components/LoginModal';
 
 
 const Home = () =>{
 
 
-  const { addToCart } = useCart();
   const [cartItems, setCartItems] = useState([]); // new state for cart items
 
-  const handleAddToCart = (bean) => {
-    addToCart(bean);
-    setCartItems((prevCartItems) => [...prevCartItems, bean]);
-    openCartModal();
-  };
 
 
   const navigate = useNavigate();
@@ -54,13 +46,8 @@ const Home = () =>{
   };
 
   
-  const openCartModal = () => {
-    setIsCartModalOpen(true);
-  };
+
   
-  const closeCartModal = () => {
-    setIsCartModalOpen(false);
-  };
 
   const handleLogin = () => {
     // Implement your login logic here
@@ -75,7 +62,6 @@ const Home = () =>{
   };
 
 
-  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
 
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -95,14 +81,8 @@ const Home = () =>{
     setCartItems(updatedCartItems);
   };
 
-  const [isSignup, setIsSignup] = useState(false);
 
-  const handleSwitchForm = () => {
-    setIsSignup((prevIsSignup) => !prevIsSignup);
-  };
 
-  
-  
   return (
     <div className='HomePage'>
       <div className="HomePageContainer">
