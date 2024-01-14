@@ -30,6 +30,7 @@ const Admin = () => {
     fetchAllBeans();
   }, []);
 
+
   const f = new Intl.NumberFormat('en-us', {
     currency: 'PHP',
     style: 'currency',
@@ -73,6 +74,7 @@ const Admin = () => {
     }
   };
 
+
   const handleAddClick = async () => {
     try {
       const formData = new FormData();
@@ -94,7 +96,6 @@ const Admin = () => {
   };
   
   
-
   const handleUpdateClick = async () => {
     try {
       const updatedItem = {
@@ -139,7 +140,6 @@ const Admin = () => {
       console.error(error);
     }
   };
-
 
 
   return (

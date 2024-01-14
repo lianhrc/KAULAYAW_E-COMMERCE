@@ -5,7 +5,6 @@ import path from 'path'
 import multer from 'multer';
 import bodyParser from "body-parser";
 
-
 const app = express();
 
 const db = mysql.createConnection({
@@ -56,15 +55,10 @@ app.get("/admin_users", (req, res)=>{
         if(err) return res.json(err)
         return res.json(data)
     })
-
     
 })
 
 
-
-
-
-// In your Express app
 app.post("/admin_users", (req, res) => {
     console.log("Received login request:", req.body);
     const { admin_username, admin_password } = req.body;
@@ -86,11 +80,9 @@ app.post("/admin_users", (req, res) => {
 });
 
 
-
 app.post("/beans", adminupload.single('coffeecover'), (req, res) => {
     console.log('Request Body:', req.body);
     const q = "INSERT INTO beans (`coffeename`, `coffeecover`, `coffeeprice`) VALUES(?)";
-
     const values = [
         req.body.coffeename,
         req.file ? req.file.filename : null,
@@ -114,10 +106,10 @@ app.delete("/beans/:id", (req, res) => {
     });
 });
 
+
 app.put("/beans/:id", adminupload.single('coffeecover'), (req, res) => {
     const coffeeid = req.params.id;
-    const q = "UPDATE beans SET coffeename = ?, coffeecover = ?, coffeeprice = ? WHERE coffeeid = ?";
-    
+    const q = "UPDATE beans SET coffeename = ?, coffeecover = ?, coffeeprice = ? WHERE coffeeid = ?";  
     const values = [
         req.body.coffeename,
         req.file ? req.file.filename : req.body.coffeecover, // Use new image if provided, else use the existing one
@@ -130,7 +122,6 @@ app.put("/beans/:id", adminupload.single('coffeecover'), (req, res) => {
         return res.json("Bean updated successfully");
     });
 });
-
 
 app.listen(8801, () => {
     console.log("Connected to backend!")
