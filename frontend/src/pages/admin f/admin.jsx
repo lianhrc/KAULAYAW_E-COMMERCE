@@ -1,14 +1,10 @@
-// Admin.jsx
-
 import React, { useEffect, useState } from 'react';
 import AdminSideSection from './AdminSideSection';
 import updateicon from '../img/updateicon.png';
 import deleteicon from '../img/deleteicon.png';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 const Admin = () => {
-  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
   const [beans, setBeans] = useState([]);
   const [isAddModalOpen, setAddModalOpen] = useState(false);
   const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
@@ -20,14 +16,6 @@ const Admin = () => {
     coffeeprice: null,
   });
 
-  const navigate = useNavigate();
-
-   const handleLogout = () => {
-    // Implement the logout logic
-    // For example, clear any authentication tokens, reset state, etc.
-    setIsAdminLoggedIn(false);
-    navigate('/admin'); // Redirect to the login page
-  };
 
 
   useEffect(() => {
@@ -152,13 +140,11 @@ const Admin = () => {
     }
   };
 
-  if (!isAdminLoggedIn) {
-    return <AdminLogin setIsAdminLoggedIn={setIsAdminLoggedIn} />;
-  }
+
 
   return (
     <div className='AdminPage'>
-      <AdminSideSection onLogout={handleLogout} />
+      <AdminSideSection/>
       <div className='AdminPageContainer'>
         <div id='adminsection1'>
           <div className='section1contentcontainer'>
@@ -288,65 +274,4 @@ const Admin = () => {
     </div>
   );
 };
-
-const AdminLogin = ({ setIsAdminLoggedIn }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleLogin = async () => {
-    try {
-      await handleAdminLogin({ username, password });
-      setIsAdminLoggedIn(true);
-    } catch (error) {
-      console.error('Error logging in:', error);
-    }
-  };
-  const handleAdminLogin = async (credentials) => {
-    // Perform authentication logic here
-    // For example, you might make a request to your server to verify the credentials
-    try {
-      // Replace the following line with your actual authentication logic
-      const response = await axios.post('http://localhost:8801/admin_users', credentials);
-
-      // Check if the authentication was successful
-      if (response.data.success) {
-        // Authentication successful, set isAdminLoggedIn to true
-        setIsAdminLoggedIn(true);
-      } else {
-        // Authentication failed, handle accordingly (e.g., show an error message)
-        console.error('Authentication failed:', response.data.message);
-      }
-    } catch (error) {
-      // Handle any errors that occurred during the authentication process
-      console.error('Error during authentication:', error);
-    }
-    
-  };
-
-  return (
-    <div className='adminloginpage'>
-      <div className="adminlogincontainer">
-        
-        <div className="adminloginimgcontainer">
-
-        </div>
-        
-        <input
-          type='text'
-          placeholder='Username'
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button onClick={handleLogin}>Login</button>
-      </div>
-    </div>
-  );
-};
-
 export default Admin;

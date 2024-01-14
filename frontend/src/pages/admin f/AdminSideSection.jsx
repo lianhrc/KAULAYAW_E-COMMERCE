@@ -20,7 +20,9 @@ const AdminSideSection = ({ onLogout }) => {
         <ul>
           <li><a href="#adminsection1"><img src={productsicon} alt="" />Products </a></li>
           <li><a href="#adminsection2"><img src={usersicon} alt="" />Users</a></li>
-          <button className='logoutbtn' onClick={onLogout}> <img src={logout} alt="" />Logout</button>
+          <button className='logoutbtn' onClick={() => window.location.href = "/adminlogin"}>
+           <img src={logout} alt="" />Logout
+           </button>
         </ul>
       </nav>
       </div>

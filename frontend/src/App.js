@@ -7,6 +7,7 @@ import {
 import Home from "./pages/home f/Home"
 import Products from "./pages/products f/Products"
 import Admin from "./pages/admin f/admin"
+import AdminLogin from "../src/components/AdminLogin"
 import "../src/pages/home f/Home.css"
 import "../src/pages/admin f/Admin.css"
 import "../src/pages/products f/Products.css"
@@ -26,6 +27,7 @@ function App() {
             <Route path="/home" element= {<Home/>}></Route>
             <Route path="/products" element={<Products/>}></Route>
             <Route path="/admin" element={<Admin/>}></Route>
+            <Route path="/adminlogin" element={<AdminLogin/>}></Route>
           </Routes>
         </BrowserRouter>
       </CartProvider>
