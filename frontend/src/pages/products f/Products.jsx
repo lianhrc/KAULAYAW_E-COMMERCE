@@ -14,9 +14,10 @@ import LoginModal from '../../components/LoginModal';
 
 
 const Products = () => {
-  const { addToCart } = useCart();
-  const [beans, setBeans] = useState([]);
-  const [cartItems, setCartItems] = useState([]); // new state for cart items
+   
+  const { addToCart } = useCart();                  // custom CartContext to access cart-related functions
+  const [beans, setBeans] = useState([]);           // State for beans and cart items
+  const [cartItems, setCartItems] = useState([]);   // new state for cart items
 
   const handleAddToCart = (bean) => {
     addToCart(bean);
@@ -69,13 +70,11 @@ const Products = () => {
   };
 
   const handleLogin = () => {
-    // Implement your login logic here
     console.log('Logging in...');
     closeModal();
   };
 
   const handleRegister = () => {
-    // Implement your register logic here
     console.log('Registering...');
     closeModal();
   };
@@ -121,8 +120,7 @@ const handleRemoveCartItem = (coffeeId) => {
           <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} cartItems={cartItems} handleRemoveItem={handleRemoveCartItem} />
           <button onClick={openModal}><img className='logo-icon' src={usericon} alt="Your Description" /></button>
           <LoginModal isOpen={modalIsOpen} closeModal={closeModal} handleLogin={handleLogin} handleRegister={handleRegister} />
-          
-            
+                  
       </div>
     </div>  
       <div className="ProductPageContent">
