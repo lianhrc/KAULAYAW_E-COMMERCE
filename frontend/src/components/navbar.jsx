@@ -5,7 +5,6 @@ import carticon from '../pages/img/shopping-bag.png';
 import usericon from '../pages/img/user.png';
 import CartSidebar from '../pages/popups/CartSidebar'; // Update the path based on your project structure
 import axios from 'axios'
-import { useSpring } from 'react-spring';
 import LoginModal from '../../components/LoginModal';
 
 
@@ -48,22 +47,13 @@ const [cartItems, setCartItems] = useState([]); // new state for cart items
     setModalIsOpen(false);
   };
 
-  const openCartModal = () => {
-    setIsCartModalOpen(true);
-  };
-  
-  const closeCartModal = () => {
-    setIsCartModalOpen(false);
-  };
-
+ 
   const handleLogin = () => {
-    // Implement your login logic here
     console.log('Logging in...');
     closeModal();
   };
 
   const handleRegister = () => {
-    // Implement your register logic here
     console.log('Registering...');
     closeModal();
   };
@@ -79,10 +69,9 @@ const [cartItems, setCartItems] = useState([]); // new state for cart items
   };
 
 
-// In your Home or Products component
 const handleRemoveCartItem = (coffeeId) => {
-  // Implement logic to remove the item with the given coffeeId from the cart
-  // You can use setCartItems to update the cart state
+  //logic to remove the item with the given coffeeId from the cart
+  // setCartItems to update the cart state
   const updatedCartItems = cartItems.filter((item) => item.coffeeid !== coffeeId);
   setCartItems(updatedCartItems);
 };

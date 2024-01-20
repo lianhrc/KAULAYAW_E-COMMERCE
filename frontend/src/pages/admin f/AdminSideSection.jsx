@@ -5,7 +5,6 @@ import productsicon from '../img/productsicon.png'
 import logout from '../img/logouticon.png'
 
 
-
 const AdminSideSection = ({ onLogout }) => {
 
   console.log('Rendering AdminSideSection');

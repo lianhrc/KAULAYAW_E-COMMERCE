@@ -20,7 +20,6 @@ const LoginModal = ({ isOpen, closeModal, handleLogin, handleRegister }) => {
     fetchAllBeans();
   }, []);
 
-  // ... (your other states and functions)
 
   const handleSwitchForm = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);

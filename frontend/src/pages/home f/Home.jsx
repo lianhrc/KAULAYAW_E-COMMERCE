@@ -4,7 +4,7 @@ import carticon from '../img/shopping-bag.png';
 import usericon from '../img/user.png';
 import Modal from 'react-modal';
 import { useState } from 'react';
-import CartSidebar from '../popups/CartSidebar'; // Update the path based on your project structure
+import CartSidebar from '../popups/CartSidebar'; 
 import { useNavigate, Link } from 'react-router-dom'
 import kaulayawvid from "../video/kaulayaw_vid_ads.mp4"
 import LoginModal from '../../components/LoginModal';
@@ -13,14 +13,12 @@ import LoginModal from '../../components/LoginModal';
 const Home = () =>{
 
 
-  const [cartItems, setCartItems] = useState([]); // new state for cart items
-
+  const [cartItems, setCartItems] = useState([]); 
 
 
   const navigate = useNavigate();
 
   const handleViewMoreClick = () => {
-    // Replace '/product' with the actual path you want to navigate to
     navigate('/products');
   };
 
@@ -50,13 +48,11 @@ const Home = () =>{
   
 
   const handleLogin = () => {
-    // Implement your login logic here
     console.log('Logging in...');
     closeModal();
   };
 
   const handleRegister = () => {
-    // Implement your register logic here
     console.log('Registering...');
     closeModal();
   };
@@ -75,8 +71,8 @@ const Home = () =>{
   };
   
   const handleRemoveCartItem = (coffeeId) => {
-    // Implement logic to remove the item with the given coffeeId from the cart
-    // You can use setCartItems to update the cart state
+    // logic to remove the item with the given coffeeId from the cart
+    // setCartItems to update the cart state
     const updatedCartItems = cartItems.filter(item => item.coffeeid !== coffeeId);
     setCartItems(updatedCartItems);
   };

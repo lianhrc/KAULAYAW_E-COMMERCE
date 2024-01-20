@@ -10,6 +10,7 @@ import LoginModal from '../../components/LoginModal';
 const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
   
   const { cartItems,removeFromCart, updateCartItemQuantity   } = useCart();
+  
   const f = new Intl.NumberFormat('en-us', {
     currency: 'PHP',
     style: 'currency',

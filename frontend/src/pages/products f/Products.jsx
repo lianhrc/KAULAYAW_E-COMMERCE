@@ -8,7 +8,7 @@ import carticon from '../img/shopping-bag.png';
 import usericon from '../img/user.png';
 import Modal from 'react-modal';
 import { useSpring, animated } from 'react-spring';
-import CartSidebar from '../popups/CartSidebar'; // Update the path based on your project structure
+import CartSidebar from '../popups/CartSidebar'; 
 import { useCart } from '../../components/CartContext';
 import LoginModal from '../../components/LoginModal';
 
@@ -16,7 +16,10 @@ import LoginModal from '../../components/LoginModal';
 const Products = () => {
   const { addToCart } = useCart();
   const [beans, setBeans] = useState([]);
-  const [cartItems, setCartItems] = useState([]); // new state for cart items
+  const [cartItems, setCartItems] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+    
 
   const handleAddToCart = (bean) => {
     addToCart(bean);
@@ -43,9 +46,7 @@ const Products = () => {
     style: "currency",
   });
 
-  
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+
 
   const animation = useSpring({
     opacity: modalIsOpen ? 1 : 0,
@@ -69,13 +70,11 @@ const Products = () => {
   };
 
   const handleLogin = () => {
-    // Implement your login logic here
     console.log('Logging in...');
     closeModal();
   };
 
   const handleRegister = () => {
-    // Implement your register logic here
     console.log('Registering...');
     closeModal();
   };
