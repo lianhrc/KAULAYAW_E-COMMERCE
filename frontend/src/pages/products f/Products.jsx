@@ -16,10 +16,7 @@ import LoginModal from '../../components/LoginModal';
 const Products = () => {
   const { addToCart } = useCart();
   const [beans, setBeans] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-    
+  const [cartItems, setCartItems] = useState([]); // new state for cart items
 
   const handleAddToCart = (bean) => {
     addToCart(bean);
@@ -120,8 +117,7 @@ const handleRemoveCartItem = (coffeeId) => {
           <CartSidebar isOpen={isCartOpen} handleClose={handleCloseCart} cartItems={cartItems} handleRemoveItem={handleRemoveCartItem} />
           <button onClick={openModal}><img className='logo-icon' src={usericon} alt="Your Description" /></button>
           <LoginModal isOpen={modalIsOpen} closeModal={closeModal} handleLogin={handleLogin} handleRegister={handleRegister} />
-          
-            
+                  
       </div>
     </div>  
       <div className="ProductPageContent">

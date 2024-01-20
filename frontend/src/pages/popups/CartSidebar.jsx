@@ -6,7 +6,6 @@ import trashicon from '../img/trash.png'
 import LoginModal from '../../components/LoginModal';
 
 
-
 const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
   
   const { cartItems,removeFromCart, updateCartItemQuantity   } = useCart();
@@ -24,7 +23,7 @@ const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
     opacity: isOpen ? 0.5 : 0,
   });
   
-
+ // State functions for the login modal
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const openLoginModal = () => {
@@ -37,6 +36,8 @@ const CartSidebar = ({ isOpen, handleClose, handleRemoveItem }) => {
     setIsLoginModalOpen(false);
   };
 
+
+  // Render the CartSidebar component
   return (
     <>
     <animated.div style={overlayAnimation} className="overlay" onClick={handleClose}></animated.div>
