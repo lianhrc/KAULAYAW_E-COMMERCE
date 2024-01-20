@@ -16,7 +16,10 @@ import LoginModal from '../../components/LoginModal';
 const Products = () => {
   const { addToCart } = useCart();
   const [beans, setBeans] = useState([]);
-  const [cartItems, setCartItems] = useState([]); // new state for cart items
+  const [cartItems, setCartItems] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+    
 
   const handleAddToCart = (bean) => {
     addToCart(bean);
